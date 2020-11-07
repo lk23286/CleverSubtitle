@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85331B8B2556C2800039D385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85331B8A2556C2800039D385 /* AppDelegate.swift */; };
+		85331B8D2556C2800039D385 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85331B8C2556C2800039D385 /* SceneDelegate.swift */; };
+		85331B8F2556C2800039D385 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85331B8E2556C2800039D385 /* ViewController.swift */; };
+		85331B922556C2800039D385 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85331B902556C2800039D385 /* Main.storyboard */; };
+		85331B942556C2850039D385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85331B932556C2850039D385 /* Assets.xcassets */; };
+		85331B972556C2850039D385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85331B952556C2850039D385 /* LaunchScreen.storyboard */; };
+		85331BA22556C2860039D385 /* CleverSubtitleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85331BA12556C2860039D385 /* CleverSubtitleTests.swift */; };
+		85331BAD2556C2860039D385 /* CleverSubtitleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85331BAC2556C2860039D385 /* CleverSubtitleUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85331B9E2556C2860039D385 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85331B7F2556C2800039D385 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85331B862556C2800039D385;
+			remoteInfo = CleverSubtitle;
+		};
+		85331BA92556C2860039D385 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85331B7F2556C2800039D385 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85331B862556C2800039D385;
+			remoteInfo = CleverSubtitle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		85331B872556C2800039D385 /* CleverSubtitle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleverSubtitle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85331B8A2556C2800039D385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		85331B8C2556C2800039D385 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		85331B8E2556C2800039D385 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		85331B912556C2800039D385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		85331B932556C2850039D385 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		85331B962556C2850039D385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		85331B982556C2850039D385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85331B9D2556C2860039D385 /* CleverSubtitleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleverSubtitleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85331BA12556C2860039D385 /* CleverSubtitleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleverSubtitleTests.swift; sourceTree = "<group>"; };
+		85331BA32556C2860039D385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85331BA82556C2860039D385 /* CleverSubtitleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleverSubtitleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85331BAC2556C2860039D385 /* CleverSubtitleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleverSubtitleUITests.swift; sourceTree = "<group>"; };
+		85331BAE2556C2860039D385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85331B842556C2800039D385 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85331B9A2556C2860039D385 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85331BA52556C2860039D385 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85331B7E2556C2800039D385 = {
+			isa = PBXGroup;
+			children = (
+				85331B892556C2800039D385 /* CleverSubtitle */,
+				85331BA02556C2860039D385 /* CleverSubtitleTests */,
+				85331BAB2556C2860039D385 /* CleverSubtitleUITests */,
+				85331B882556C2800039D385 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85331B882556C2800039D385 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85331B872556C2800039D385 /* CleverSubtitle.app */,
+				85331B9D2556C2860039D385 /* CleverSubtitleTests.xctest */,
+				85331BA82556C2860039D385 /* CleverSubtitleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85331B892556C2800039D385 /* CleverSubtitle */ = {
+			isa = PBXGroup;
+			children = (
+				85331B8A2556C2800039D385 /* AppDelegate.swift */,
+				85331B8C2556C2800039D385 /* SceneDelegate.swift */,
+				85331B8E2556C2800039D385 /* ViewController.swift */,
+				85331B902556C2800039D385 /* Main.storyboard */,
+				85331B932556C2850039D385 /* Assets.xcassets */,
+				85331B952556C2850039D385 /* LaunchScreen.storyboard */,
+				85331B982556C2850039D385 /* Info.plist */,
+			);
+			path = CleverSubtitle;
+			sourceTree = "<group>";
+		};
+		85331BA02556C2860039D385 /* CleverSubtitleTests */ = {
+			isa = PBXGroup;
+			children = (
+				85331BA12556C2860039D385 /* CleverSubtitleTests.swift */,
+				85331BA32556C2860039D385 /* Info.plist */,
+			);
+			path = CleverSubtitleTests;
+			sourceTree = "<group>";
+		};
+		85331BAB2556C2860039D385 /* CleverSubtitleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				85331BAC2556C2860039D385 /* CleverSubtitleUITests.swift */,
+				85331BAE2556C2860039D385 /* Info.plist */,
+			);
+			path = CleverSubtitleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85331B862556C2800039D385 /* CleverSubtitle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85331BB12556C2860039D385 /* Build configuration list for PBXNativeTarget "CleverSubtitle" */;
+			buildPhases = (
+				85331B832556C2800039D385 /* Sources */,
+				85331B842556C2800039D385 /* Frameworks */,
+				85331B852556C2800039D385 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CleverSubtitle;
+			productName = CleverSubtitle;
+			productReference = 85331B872556C2800039D385 /* CleverSubtitle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		85331B9C2556C2860039D385 /* CleverSubtitleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85331BB42556C2860039D385 /* Build configuration list for PBXNativeTarget "CleverSubtitleTests" */;
+			buildPhases = (
+				85331B992556C2860039D385 /* Sources */,
+				85331B9A2556C2860039D385 /* Frameworks */,
+				85331B9B2556C2860039D385 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85331B9F2556C2860039D385 /* PBXTargetDependency */,
+			);
+			name = CleverSubtitleTests;
+			productName = CleverSubtitleTests;
+			productReference = 85331B9D2556C2860039D385 /* CleverSubtitleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		85331BA72556C2860039D385 /* CleverSubtitleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85331BB72556C2860039D385 /* Build configuration list for PBXNativeTarget "CleverSubtitleUITests" */;
+			buildPhases = (
+				85331BA42556C2860039D385 /* Sources */,
+				85331BA52556C2860039D385 /* Frameworks */,
+				85331BA62556C2860039D385 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85331BAA2556C2860039D385 /* PBXTargetDependency */,
+			);
+			name = CleverSubtitleUITests;
+			productName = CleverSubtitleUITests;
+			productReference = 85331BA82556C2860039D385 /* CleverSubtitleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85331B7F2556C2800039D385 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					85331B862556C2800039D385 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					85331B9C2556C2860039D385 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 85331B862556C2800039D385;
+					};
+					85331BA72556C2860039D385 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 85331B862556C2800039D385;
+					};
+				};
+			};
+			buildConfigurationList = 85331B822556C2800039D385 /* Build configuration list for PBXProject "CleverSubtitle" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 85331B7E2556C2800039D385;
+			productRefGroup = 85331B882556C2800039D385 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85331B862556C2800039D385 /* CleverSubtitle */,
+				85331B9C2556C2860039D385 /* CleverSubtitleTests */,
+				85331BA72556C2860039D385 /* CleverSubtitleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85331B852556C2800039D385 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85331B972556C2850039D385 /* LaunchScreen.storyboard in Resources */,
+				85331B942556C2850039D385 /* Assets.xcassets in Resources */,
+				85331B922556C2800039D385 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85331B9B2556C2860039D385 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85331BA62556C2860039D385 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85331B832556C2800039D385 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85331B8F2556C2800039D385 /* ViewController.swift in Sources */,
+				85331B8B2556C2800039D385 /* AppDelegate.swift in Sources */,
+				85331B8D2556C2800039D385 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85331B992556C2860039D385 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85331BA22556C2860039D385 /* CleverSubtitleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85331BA42556C2860039D385 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85331BAD2556C2860039D385 /* CleverSubtitleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85331B9F2556C2860039D385 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85331B862556C2800039D385 /* CleverSubtitle */;
+			targetProxy = 85331B9E2556C2860039D385 /* PBXContainerItemProxy */;
+		};
+		85331BAA2556C2860039D385 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85331B862556C2800039D385 /* CleverSubtitle */;
+			targetProxy = 85331BA92556C2860039D385 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		85331B902556C2800039D385 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85331B912556C2800039D385 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		85331B952556C2850039D385 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85331B962556C2850039D385 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		85331BAF2556C2860039D385 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		85331BB02556C2860039D385 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		85331BB22556C2860039D385 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LR58F43S2;
+				INFOPLIST_FILE = CleverSubtitle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lgl.2.CleverSubtitle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		85331BB32556C2860039D385 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LR58F43S2;
+				INFOPLIST_FILE = CleverSubtitle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lgl.2.CleverSubtitle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		85331BB52556C2860039D385 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LR58F43S2;
+				INFOPLIST_FILE = CleverSubtitleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lgl.2.CleverSubtitleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleverSubtitle.app/CleverSubtitle";
+			};
+			name = Debug;
+		};
+		85331BB62556C2860039D385 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LR58F43S2;
+				INFOPLIST_FILE = CleverSubtitleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lgl.2.CleverSubtitleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleverSubtitle.app/CleverSubtitle";
+			};
+			name = Release;
+		};
+		85331BB82556C2860039D385 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LR58F43S2;
+				INFOPLIST_FILE = CleverSubtitleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lgl.2.CleverSubtitleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CleverSubtitle;
+			};
+			name = Debug;
+		};
+		85331BB92556C2860039D385 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LR58F43S2;
+				INFOPLIST_FILE = CleverSubtitleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lgl.2.CleverSubtitleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CleverSubtitle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85331B822556C2800039D385 /* Build configuration list for PBXProject "CleverSubtitle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85331BAF2556C2860039D385 /* Debug */,
+				85331BB02556C2860039D385 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85331BB12556C2860039D385 /* Build configuration list for PBXNativeTarget "CleverSubtitle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85331BB22556C2860039D385 /* Debug */,
+				85331BB32556C2860039D385 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85331BB42556C2860039D385 /* Build configuration list for PBXNativeTarget "CleverSubtitleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85331BB52556C2860039D385 /* Debug */,
+				85331BB62556C2860039D385 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85331BB72556C2860039D385 /* Build configuration list for PBXNativeTarget "CleverSubtitleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85331BB82556C2860039D385 /* Debug */,
+				85331BB92556C2860039D385 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85331B7F2556C2800039D385 /* Project object */;
+}

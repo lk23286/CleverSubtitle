@@ -32,7 +32,6 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="tLZ-zq-xjm" firstAttribute="top" secondItem="6DG-vc-gtR" secondAttribute="top" constant="1" id="THj-km-Jrf"/>
                                             <constraint firstAttribute="bottom" secondItem="tLZ-zq-xjm" secondAttribute="bottom" constant="1" id="b3c-nY-7CD"/>
@@ -51,7 +50,6 @@
                                                 </state>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="E8B-DZ-QcS" firstAttribute="top" secondItem="Vie-i4-T8S" secondAttribute="top" constant="1" id="RGP-co-PFf"/>
                                             <constraint firstItem="E8B-DZ-QcS" firstAttribute="leading" secondItem="Vie-i4-T8S" secondAttribute="leading" constant="1" id="fyG-e1-TVn"/>
@@ -70,7 +68,6 @@
                                                 </state>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="2WB-7b-6pQ" secondAttribute="bottom" constant="1" id="6aI-3c-g3b"/>
                                             <constraint firstAttribute="trailing" secondItem="2WB-7b-6pQ" secondAttribute="trailing" constant="1" id="NoD-d0-x7A"/>
@@ -89,7 +86,6 @@
                                                 </state>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="urd-wp-YR3" secondAttribute="trailing" constant="1" id="CMY-JK-JwL"/>
                                             <constraint firstItem="urd-wp-YR3" firstAttribute="top" secondItem="e1E-jy-myo" secondAttribute="top" constant="1" id="CXZ-9l-4sL"/>
@@ -121,7 +117,6 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="4HB-dz-Utd" firstAttribute="top" secondItem="D10-p8-B9p" secondAttribute="top" id="7YI-zn-1Hq"/>
                                             <constraint firstAttribute="bottom" secondItem="4HB-dz-Utd" secondAttribute="bottom" id="7wx-lk-mZy"/>

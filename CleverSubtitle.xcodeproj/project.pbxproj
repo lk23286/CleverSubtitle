@@ -15,6 +15,8 @@
 		85331B972556C2850039D385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85331B952556C2850039D385 /* LaunchScreen.storyboard */; };
 		85331BA22556C2860039D385 /* CleverSubtitleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85331BA12556C2860039D385 /* CleverSubtitleTests.swift */; };
 		85331BAD2556C2860039D385 /* CleverSubtitleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85331BAC2556C2860039D385 /* CleverSubtitleUITests.swift */; };
+		85331BD9255C852A0039D385 /* brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85331BD8255C852A0039D385 /* brain.swift */; };
+		85331BDE255C85740039D385 /* Sentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85331BDD255C85740039D385 /* Sentence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		85331BA82556C2860039D385 /* CleverSubtitleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleverSubtitleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85331BAC2556C2860039D385 /* CleverSubtitleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleverSubtitleUITests.swift; sourceTree = "<group>"; };
 		85331BAE2556C2860039D385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85331BD8255C852A0039D385 /* brain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brain.swift; sourceTree = "<group>"; };
+		85331BDD255C85740039D385 /* Sentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 		85331BBF2556C2E20039D385 /* Modell */ = {
 			isa = PBXGroup;
 			children = (
+				85331BD8255C852A0039D385 /* brain.swift */,
+				85331BDD255C85740039D385 /* Sentence.swift */,
 			);
 			path = Modell;
 			sourceTree = "<group>";
@@ -284,6 +290,8 @@
 			files = (
 				85331B8F2556C2800039D385 /* ViewController.swift in Sources */,
 				85331B8B2556C2800039D385 /* AppDelegate.swift in Sources */,
+				85331BDE255C85740039D385 /* Sentence.swift in Sources */,
+				85331BD9255C852A0039D385 /* brain.swift in Sources */,
 				85331B8D2556C2800039D385 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

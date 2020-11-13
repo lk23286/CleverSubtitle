@@ -16,10 +16,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var GoodAnswerLabel: UILabel!
     @IBOutlet weak var FaceLabel: UIImageView!
     @IBOutlet weak var BadAnswerLabel: UILabel!
+    let brain = Brain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        questionLabel.text = brain.sentences[1].eng
+        
+        
     }
 
     @IBAction func Answer1Button(_ sender: UIButton) {

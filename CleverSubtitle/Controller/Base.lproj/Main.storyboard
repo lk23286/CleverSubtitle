@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -105,20 +105,33 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D10-p8-B9p" userLabel="ResultView">
                                         <rect key="frame" x="0.0" y="682.5" width="414" height="169.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="72" translatesAutoresizingMaskIntoConstraints="NO" id="4HB-dz-Utd">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="169.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="8ZE-XX-2nM">
+                                                <rect key="frame" x="70" y="59.5" width="274" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeE-rc-O2U">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="169.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Kgg-uP-zA4"/>
+                                                            <constraint firstAttribute="width" constant="50" id="otU-xt-UUN"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <color key="textColor" systemColor="systemGreenColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad" translatesAutoresizingMaskIntoConstraints="NO" id="LNt-83-nKL">
-                                                        <rect key="frame" x="162" y="0.0" width="90" height="169.5"/>
-                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sC-h0-KA5">
+                                                        <rect key="frame" x="112" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="HVn-BJ-ekd"/>
+                                                            <constraint firstAttribute="width" constant="50" id="nnI-Ft-osj"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="sad"/>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtm-Hu-oy5">
-                                                        <rect key="frame" x="324" y="0.0" width="90" height="169.5"/>
+                                                        <rect key="frame" x="224" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="cu5-7v-pY1"/>
+                                                            <constraint firstAttribute="height" constant="50" id="hpV-6r-7U3"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
@@ -127,10 +140,8 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="4HB-dz-Utd" firstAttribute="top" secondItem="D10-p8-B9p" secondAttribute="top" id="7YI-zn-1Hq"/>
-                                            <constraint firstAttribute="bottom" secondItem="4HB-dz-Utd" secondAttribute="bottom" id="7wx-lk-mZy"/>
-                                            <constraint firstItem="4HB-dz-Utd" firstAttribute="leading" secondItem="D10-p8-B9p" secondAttribute="leading" id="OHF-qj-0wN"/>
-                                            <constraint firstAttribute="trailing" secondItem="4HB-dz-Utd" secondAttribute="trailing" id="WJI-Or-xEW"/>
+                                            <constraint firstItem="8ZE-XX-2nM" firstAttribute="centerY" secondItem="D10-p8-B9p" secondAttribute="centerY" id="GFl-tG-aJg"/>
+                                            <constraint firstItem="8ZE-XX-2nM" firstAttribute="centerX" secondItem="D10-p8-B9p" secondAttribute="centerX" id="bDJ-ue-JmY"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -154,7 +165,6 @@
                         <outlet property="Answer2ButtonLabel" destination="2WB-7b-6pQ" id="c6a-Gq-SWW"/>
                         <outlet property="Answer3ButtonLabel" destination="urd-wp-YR3" id="8RH-70-bxC"/>
                         <outlet property="BadAnswerLabel" destination="rtm-Hu-oy5" id="jb6-9V-PKt"/>
-                        <outlet property="FaceLabel" destination="LNt-83-nKL" id="ziy-H4-SGA"/>
                         <outlet property="GoodAnswerLabel" destination="xeE-rc-O2U" id="2m4-UL-tEN"/>
                         <outlet property="questionLabel" destination="tLZ-zq-xjm" id="ueK-pQ-t5x"/>
                     </connections>

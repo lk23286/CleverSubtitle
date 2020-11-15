@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var Answer2ButtonLabel: UIButton!
     @IBOutlet weak var Answer3ButtonLabel: UIButton!
     @IBOutlet weak var GoodAnswerLabel: UILabel!
-    @IBOutlet weak var FaceLabel: UIImageView!
+   
+    @IBOutlet weak var FaceButtonLabel: UIButton!
     @IBOutlet weak var BadAnswerLabel: UILabel!
     
     override func viewDidLoad() {

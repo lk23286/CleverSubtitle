@@ -99,7 +99,6 @@
 		85331B892556C2800039D385 /* CleverSubtitle */ = {
 			isa = PBXGroup;
 			children = (
-				85331BBF2556C2E20039D385 /* Modell */,
 				85331BBE2556C2D90039D385 /* View */,
 				85331BBD2556C2CC0039D385 /* Controller */,
 				85331B8A2556C2800039D385 /* AppDelegate.swift */,
@@ -143,13 +142,6 @@
 				85331B8E2556C2800039D385 /* ViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		85331BBF2556C2E20039D385 /* Modell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

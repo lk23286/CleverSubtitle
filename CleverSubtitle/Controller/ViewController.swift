@@ -29,24 +29,10 @@ class ViewController: UIViewController {
         let faceImage = #imageLiteral(resourceName: "sad")
         
         FaceButtonLabel.setImage(faceImage, for: .normal)
-    
         GoodAnswerLabel.text = goodNumber
-         
         BadAnswerLabel.text = badNumber
         
-        // giveMeQuestion -> question
-        let question = logic.giveMeQuestion()
-        
-       // showQuestion (question)
-        questionLabel.text = question
-        
-       // giveMeAnswers -> answers
-        let answers = logic.giveMeAnswer()
-        
-       // showAnswers (answers)
-        Answer1ButtonLabel.setTitle(answers[0], for: .normal)
-        Answer2ButtonLabel.setTitle(answers[1], for: .normal)
-        Answer3ButtonLabel.setTitle(answers[2], for: .normal)
+giveOneTry()
         
         
     }
@@ -55,13 +41,24 @@ class ViewController: UIViewController {
         
         let answer = sender.currentTitle
         print(answer!)
-     // checkAnswer (answer) -> score
+        
+        // checkAnswer (answer) -> score
+        let score = logic.checkAnswer(answer: answer!)
+        
+        FaceButtonLabel.setImage(score.faceImage, for: .normal)
+        GoodAnswerLabel.text = score.goodAnswer
+        BadAnswerLabel.text = score.badAnswer
+        
+        
     // viewResult (score)
+        
+      
+        
         // giveMeQuestion -> question
        // showQuestion (question)
        // giveMeAnswers -> answers
        // showAnswers (answers)
-        
+        giveOneTry()
         
         
     }
@@ -76,6 +73,22 @@ class ViewController: UIViewController {
     
     @IBAction func FaceButton(_ sender: UIButton) {
         // reset
+    }
+    
+    func giveOneTry() {
+        // giveMeQuestion -> question
+        let question = logic.giveMeQuestion()
+        
+       // showQuestion (question)
+        questionLabel.text = question
+        
+       // giveMeAnswers -> answers
+        let answers = logic.giveMeAnswer()
+        
+       // showAnswers (answers)
+        Answer1ButtonLabel.setTitle(answers[0], for: .normal)
+        Answer2ButtonLabel.setTitle(answers[1], for: .normal)
+        Answer3ButtonLabel.setTitle(answers[2], for: .normal)
     }
 }
 

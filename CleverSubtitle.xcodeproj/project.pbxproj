@@ -18,6 +18,7 @@
 		85331B972556C2850039D385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85331B952556C2850039D385 /* LaunchScreen.storyboard */; };
 		85331BA22556C2860039D385 /* CleverSubtitleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85331BA12556C2860039D385 /* CleverSubtitleTests.swift */; };
 		85331BAD2556C2860039D385 /* CleverSubtitleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85331BAC2556C2860039D385 /* CleverSubtitleUITests.swift */; };
+		85A3B4DD2567153800991DD6 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A3B4DC2567153800991DD6 /* Score.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		85331BA82556C2860039D385 /* CleverSubtitleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleverSubtitleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85331BAC2556C2860039D385 /* CleverSubtitleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleverSubtitleUITests.swift; sourceTree = "<group>"; };
 		85331BAE2556C2860039D385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85A3B4DC2567153800991DD6 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				851DB91D2564732F00D141EB /* Data.swift */,
 				851DB925256474DF00D141EB /* Sentence.swift */,
 				851DB92A256475CD00D141EB /* Logic.swift */,
+				85A3B4DC2567153800991DD6 /* Score.swift */,
 			);
 			path = Modell;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85A3B4DD2567153800991DD6 /* Score.swift in Sources */,
 				85331B8F2556C2800039D385 /* ViewController.swift in Sources */,
 				85331B8B2556C2800039D385 /* AppDelegate.swift in Sources */,
 				851DB926256474DF00D141EB /* Sentence.swift in Sources */,

@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func Answer1Button(_ sender: UIButton) {
+    @IBAction func AnswerButtonPress(_ sender: UIButton) {
         
         let answer = sender.currentTitle
         

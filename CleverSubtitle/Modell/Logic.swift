@@ -12,7 +12,9 @@ struct Logic {
     
     let data = Data()
     var practicingData = [ExtendSentence(eng: "Leslie", hun: "Laca", goodAnswer: 0)]
-    
+    var questionNumber = 0
+    var goodAnswer = 0
+    var badAnswer = 0
     
    
     mutating func createPracticingData() {
@@ -24,18 +26,16 @@ struct Logic {
 
     }
     
-     func giveMeQuestion() -> String {
-        
-
-        
+    mutating func giveMeQuestion() -> String {
+    
         // get three from the stack randomly where goodAnswer < 2
         // put the three into a small stack
             // mark the good answer
         
         let max = practicingData.count - 1
-        let getOne = Int.random(in: 0...max)
+        questionNumber = Int.random(in: 0...max)
         
-        let answer = practicingData[getOne].eng
+        let answer = practicingData[questionNumber].eng
         return answer
     }
     func giveMeAnswer() -> [String] {
@@ -56,10 +56,28 @@ struct Logic {
     
     
     // ckeck the answer
-    func checkAnswer(answer: String) -> Score {
-        let score = Score(goodAnswer: "6", badAnswer: "8", faceImage: #imageLiteral(resourceName: "sad"))
+    mutating func checkAnswer(collectedAnswer: String) -> Score {
         
-        print(answer)
+        
+        
+        
+        let score = Score(goodAnswer: "6", badAnswer: "8", faceImage: #imageLiteral(resourceName: "Scream"))
+        
+        print(collectedAnswer)
+        let rightAnswer = practicingData[questionNumber].hun
+        var goodAnswerNumber = practicingData[questionNumber].goodAnswer
+       
+        if collectedAnswer == rightAnswer {
+            goodAnswerNumber += 1
+            goodAnswer += 1
+        }
+        else {
+            goodAnswerNumber -= 1
+            badAnswer += 1
+           // let badAnswerStr = String
+        }
+        
+        
         // if answer is good then add +1 of goodAnswer of the answer in stack 
         
         

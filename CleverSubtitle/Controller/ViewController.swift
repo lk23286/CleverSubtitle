@@ -32,6 +32,9 @@ class ViewController: UIViewController {
         GoodAnswerLabel.text = goodNumber
         BadAnswerLabel.text = badNumber
         
+        // createPracticingData
+        
+        
 giveOneTry()
         
         
@@ -76,6 +79,8 @@ giveOneTry()
     }
     
     func giveOneTry() {
+        
+        
         // giveMeQuestion -> question
         let question = logic.giveMeQuestion()
         

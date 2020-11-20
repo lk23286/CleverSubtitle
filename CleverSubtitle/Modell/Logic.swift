@@ -11,9 +11,21 @@ import Foundation
 struct Logic {
     
     let data = Data()
+    var practicingData: [ExtendSentence] 
     
+   
+    mutating func createPracticingData() {
+        let max = data.sentences.count - 1
+        for i in 0...max {
+            
+            practicingData.append(.init(eng: data.sentences[i].eng, hun: data.sentences[i].hun, goodAnswer: 0))
+        }
+
+    }
     
     func giveMeQuestion() -> String {
+        
+        
         // get three from the stack randomly where goodAnswer < 2
         // put the three into a small stack
             // mark the good answer
@@ -52,6 +64,7 @@ struct Logic {
         
     }
         //
-    
-    
 }
+
+
+

@@ -9,6 +9,10 @@ import Foundation
 struct Sentence {
     let eng: String
     let hun: String
-    var goodAnswer: Int
-    var wrongAnswer: Int
 }
+struct ExtendSentence {
+    let eng: String
+    let hun: String
+    let goodAnswer: Int
+}
+

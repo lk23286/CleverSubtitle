@@ -70,7 +70,7 @@
                                                     <color key="titleColor" systemColor="systemYellowColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="Answer2Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3QZ-xL-OGT"/>
+                                                    <action selector="Answer1Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uyd-ji-JzB"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -91,7 +91,7 @@
                                                     <color key="titleColor" systemColor="systemYellowColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="Answer3Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8kh-7T-fjW"/>
+                                                    <action selector="Answer1Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B7v-OD-qCX"/>
                                                 </connections>
                                             </button>
                                         </subviews>

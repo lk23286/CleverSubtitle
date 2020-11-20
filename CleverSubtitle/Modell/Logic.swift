@@ -24,11 +24,9 @@ struct Logic {
 
     }
     
-    mutating func giveMeQuestion() -> String {
+     func giveMeQuestion() -> String {
         
-        // create practicing stack
-        
-       
+
         
         // get three from the stack randomly where goodAnswer < 2
         // put the three into a small stack
@@ -61,6 +59,7 @@ struct Logic {
     func checkAnswer(answer: String) -> Score {
         let score = Score(goodAnswer: "6", badAnswer: "8", faceImage: #imageLiteral(resourceName: "sad"))
         
+        print(answer)
         // if answer is good then add +1 of goodAnswer of the answer in stack 
         
         

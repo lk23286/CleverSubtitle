@@ -25,14 +25,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        
+        // inicislize the  view
         FaceButtonLabel.setImage(faceImage, for: .normal)
         GoodAnswerLabel.text = goodNumber
         BadAnswerLabel.text = badNumber
         
-        // createPracticingData
-        initialize()
+        reset()
 
         
         
@@ -41,7 +39,7 @@ class ViewController: UIViewController {
     @IBAction func Answer1Button(_ sender: UIButton) {
         
         let answer = sender.currentTitle
-        print(answer!)
+        
         
         // checkAnswer (answer) -> score
         let score = logic.checkAnswer(answer: answer!)
@@ -54,30 +52,21 @@ class ViewController: UIViewController {
         // viewResult (score)
         
         
-        
         // giveMeQuestion -> question
         // showQuestion (question)
         // giveMeAnswers -> answers
         // showAnswers (answers)
         giveOneTry()
         
-        
     }
     
-    @IBAction func Answer2Button(_ sender: UIButton) {
-        // checkAnswer
-    }
-    
-    @IBAction func Answer3Button(_ sender: UIButton) {
-        // checkAnswer
-    }
+
     
     @IBAction func FaceButton(_ sender: UIButton) {
         // reset
     }
     
     func giveOneTry() {
-        
         
         // giveMeQuestion -> question
         let question = logic.giveMeQuestion()
@@ -94,7 +83,7 @@ class ViewController: UIViewController {
         Answer3ButtonLabel.setTitle(answers[2], for: .normal)
     }
     
-    func initialize() {
+    func reset() {
         logic.createPracticingData()
         giveOneTry()
     }

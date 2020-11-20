@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         
         
         // checkAnswer (answer) -> score
-        let score = logic.checkAnswer(answer: answer!)
+        let score = logic.checkAnswer(collectedAnswer: answer!)
         
         FaceButtonLabel.setImage(score.faceImage, for: .normal)
         GoodAnswerLabel.text = score.goodAnswer

@@ -6,15 +6,17 @@
 //
 
 import Foundation
-
+import UIKit
 
 struct Logic {
     
     let data = Data()
     var practicingData = [ExtendSentence(eng: "Leslie", hun: "Laca", goodAnswer: 0)]
     var questionNumber = 0
-    var goodAnswer = 0
-    var badAnswer = 0
+    var goodAnswerNumberForLabel = 0
+    var badAnswerNumberForLabel = 0
+    var goodAnswerStrForLabel = ""
+    var badAnswerStrForLabel = ""
     
    
     mutating func createPracticingData() {
@@ -58,29 +60,30 @@ struct Logic {
     // ckeck the answer
     mutating func checkAnswer(collectedAnswer: String) -> Score {
         
-        
-        
-        
-        let score = Score(goodAnswer: "6", badAnswer: "8", faceImage: #imageLiteral(resourceName: "Scream"))
-        
         print(collectedAnswer)
+        
         let rightAnswer = practicingData[questionNumber].hun
-        var goodAnswerNumber = practicingData[questionNumber].goodAnswer
+        
+        var goodAnswerNumberOfQuestion = practicingData[questionNumber].goodAnswer
+
+        var faceImageForLabel = #imageLiteral(resourceName: "sad")
        
         if collectedAnswer == rightAnswer {
-            goodAnswerNumber += 1
-            goodAnswer += 1
+            goodAnswerNumberOfQuestion += 1
+            goodAnswerNumberForLabel += 1
+           goodAnswerStrForLabel = String(goodAnswerNumberForLabel)
+            faceImageForLabel = #imageLiteral(resourceName: "happy")
         }
         else {
-            goodAnswerNumber -= 1
-            badAnswer += 1
-           // let badAnswerStr = String
+            goodAnswerNumberOfQuestion -= 1
+            badAnswerNumberForLabel += 1
+            badAnswerStrForLabel = String(badAnswerNumberForLabel)
+            faceImageForLabel = #imageLiteral(resourceName: "sad")
         }
-        
-        
         // if answer is good then add +1 of goodAnswer of the answer in stack 
         
-        
+        let score = Score(goodAnswer: goodAnswerStrForLabel, badAnswer: badAnswerStrForLabel, faceImage: faceImageForLabel)
+    
         return score
         
     }

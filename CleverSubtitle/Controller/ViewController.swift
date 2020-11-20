@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var Answer1ButtonLabel: UIButton!
     @IBOutlet weak var Answer2ButtonLabel: UIButton!
@@ -17,29 +17,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var FaceButtonLabel: UIButton!
     @IBOutlet weak var BadAnswerLabel: UILabel!
     
-    let logic = Logic()
-    
+    var logic = Logic()
+    let goodNumber = "0"
+    let badNumber = "0"
+    let faceImage = #imageLiteral(resourceName: "sad")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        let goodNumber = "0"
-        let badNumber = "0"
-        let faceImage = #imageLiteral(resourceName: "sad")
+        // Do any additional setup after loading the view.
         
         FaceButtonLabel.setImage(faceImage, for: .normal)
         GoodAnswerLabel.text = goodNumber
         BadAnswerLabel.text = badNumber
         
         // createPracticingData
-        
-        
-giveOneTry()
+        initialize()
+
         
         
     }
-
+    
     @IBAction func Answer1Button(_ sender: UIButton) {
         
         let answer = sender.currentTitle
@@ -53,21 +51,21 @@ giveOneTry()
         BadAnswerLabel.text = score.badAnswer
         
         
-    // viewResult (score)
+        // viewResult (score)
         
-      
+        
         
         // giveMeQuestion -> question
-       // showQuestion (question)
-       // giveMeAnswers -> answers
-       // showAnswers (answers)
+        // showQuestion (question)
+        // giveMeAnswers -> answers
+        // showAnswers (answers)
         giveOneTry()
         
         
     }
     
     @IBAction func Answer2Button(_ sender: UIButton) {
-       // checkAnswer
+        // checkAnswer
     }
     
     @IBAction func Answer3Button(_ sender: UIButton) {
@@ -84,16 +82,22 @@ giveOneTry()
         // giveMeQuestion -> question
         let question = logic.giveMeQuestion()
         
-       // showQuestion (question)
+        // showQuestion (question)
         questionLabel.text = question
         
-       // giveMeAnswers -> answers
+        // giveMeAnswers -> answers
         let answers = logic.giveMeAnswer()
         
-       // showAnswers (answers)
+        // showAnswers (answers)
         Answer1ButtonLabel.setTitle(answers[0], for: .normal)
         Answer2ButtonLabel.setTitle(answers[1], for: .normal)
         Answer3ButtonLabel.setTitle(answers[2], for: .normal)
     }
+    
+    func initialize() {
+        logic.createPracticingData()
+        giveOneTry()
+    }
+        
 }
 

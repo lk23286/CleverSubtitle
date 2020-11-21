@@ -14,7 +14,9 @@ struct Logic {
     var mainQueue = [ExtendedSentence(eng: "Leslie", hun: "Laca", goodAnswer: 0)]
     var maxIndexOfMainQueue = 0
     var positionOftheQuestion = 0
-    var smallQueue = [ExtendedSentence(eng: "Leslie", hun: "Laca", goodAnswer: 0)]
+    var smallQueue = [ExtendedSentence(eng: "Leslie1", hun: "Laca1", goodAnswer: 0),
+                      ExtendedSentence(eng: "Leslie2", hun: "Laca2", goodAnswer: 1),
+                      ExtendedSentence(eng: "Leslie3", hun: "Laca3", goodAnswer: 2)]
 /*
     var questionNumber = 0 // the number that is used under the practice
     var answerNumbers = [0,0,0]

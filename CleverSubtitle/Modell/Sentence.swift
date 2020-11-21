@@ -10,7 +10,7 @@ struct Sentence {
     let eng: String
     let hun: String
 }
-struct ExtendSentence {
+struct ExtendedSentence {
     let eng: String
     let hun: String
     let goodAnswer: Int

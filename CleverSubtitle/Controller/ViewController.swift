@@ -69,13 +69,13 @@ class ViewController: UIViewController {
     func giveOneTry() {
         
         // giveMeQuestion -> question
-        let question = logic.giveMeQuestion()
+        let question = logic.fetchQuestion()
         
         // showQuestion (question)
         questionLabel.text = question
         
         // giveMeAnswers -> answers
-        let answers = logic.giveMeAnswer()
+        let answers = logic.fetchAnswers()
         
         // showAnswers (answers)
         Answer1ButtonLabel.setTitle(answers[0], for: .normal)
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
     }
     
     func reset() {
-        logic.createPracticingData()
+        logic.populateMainQueue()
         giveOneTry()
     }
         

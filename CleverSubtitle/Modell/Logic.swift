@@ -10,8 +10,11 @@ import UIKit
 
 struct Logic {
     
-    let data = Data()
-    var practicingData = [ExtendSentence(eng: "Leslie", hun: "Laca", goodAnswer: 0)]
+    let originalQueue = Data()
+    var mainQueue = [ExtendedSentence(eng: "Leslie", hun: "Laca", goodAnswer: 0)]
+    var maxIndexOfMainQueue = 0
+    var positionOftheQuestion = 0
+    var smallQueue = [ExtendedSentence(eng: "Leslie", hun: "Laca", goodAnswer: 0)]
 /*
     var questionNumber = 0 // the number that is used under the practice
     var answerNumbers = [0,0,0]
@@ -22,28 +25,41 @@ struct Logic {
  */
     
    
-    mutating func createPracticingData() {
-        let max = data.sentences.count - 1
-        for i in 0...max {
+    mutating func populateMainQueue() {
+        maxIndexOfMainQueue = originalQueue.sentences.count - 1
+        for i in 0...maxIndexOfMainQueue {
             
-            practicingData.append(.init(eng: data.sentences[i].eng, hun: data.sentences[i].hun, goodAnswer: 0))
+            mainQueue.append(.init(eng: originalQueue.sentences[i].eng, hun: originalQueue.sentences[i].hun, goodAnswer: 0))
         }
-
+        mainQueue.remove(at: 0)
     }
     
-    mutating func giveMeQuestion() -> String {
-    
+    mutating func fetchQuestion() -> String {
         
         //pull randomly 3 sentence - first is the question, other two are answers
-        // remeber the position of the qood number in the main queue
+        var randomNumbers = [0,0,0]
+
+        randomNumbers[0] = Int.random(in: 0...maxIndexOfMainQueue)
+        repeat {
+            randomNumbers[1] = Int.random(in: 0...maxIndexOfMainQueue)
+            
+        } while randomNumbers[0] == randomNumbers[1]
+        repeat {
+            randomNumbers[2] = Int.random(in: 0...maxIndexOfMainQueue)
+        } while randomNumbers[0] == randomNumbers[2] || randomNumbers[1] == randomNumbers[2]
+        
+        // remeber the position of the question in the main queue
+        positionOftheQuestion = randomNumbers[0]
+        
         // put the 3 sentences into a small queue
+        for i in 0...2 {
+            smallQueue[i] = mainQueue[randomNumbers[i]]
+        }
+        
         // give back the firts one engish part as question
-        
-        
-        let question = ""
-        return question
+        return  smallQueue[0].eng
     }
-    func giveMeAnswer() -> [String] {
+    func fetchAnswers() -> [String] {
         
  // get th small queue
  // mix them

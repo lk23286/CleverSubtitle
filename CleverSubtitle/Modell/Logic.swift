@@ -43,31 +43,36 @@ struct Logic {
     
     mutating func fetchQuestion() -> String {
         
-        //pull randomly 3 sentence - first is the question, other two are answers
-        var randomNumbers = [0,0,0]
+    // repeate this one until the first one is somethnig
+        repeat {
+            //pull randomly 3 sentence - first is the question, other two are answers
+                    var randomNumbers = [0,0,0]
 
-        randomNumbers[0] = Int.random(in: 0...maxIndexOfMainQueue)
-        repeat {
-            randomNumbers[1] = Int.random(in: 0...maxIndexOfMainQueue)
-            
-        } while randomNumbers[0] == randomNumbers[1]
-        repeat {
-            randomNumbers[2] = Int.random(in: 0...maxIndexOfMainQueue)
-        } while randomNumbers[0] == randomNumbers[2] || randomNumbers[1] == randomNumbers[2]
-        
-        // remeber the position of the question in the main queue
-        positionOftheQuestion = randomNumbers[0]
-        
-        // put the 3 sentences into a small queue
-        for i in 0...2 {
-            print("i: \(i)","rn:\(randomNumbers[i])", mainQueue.count)
-            smallQueue[i] = mainQueue[randomNumbers[i]]
-         
+                    randomNumbers[0] = Int.random(in: 0...maxIndexOfMainQueue)
+                    repeat {
+                        randomNumbers[1] = Int.random(in: 0...maxIndexOfMainQueue)
+                        
+                    } while randomNumbers[0] == randomNumbers[1]
+                    repeat {
+                        randomNumbers[2] = Int.random(in: 0...maxIndexOfMainQueue)
+                    } while randomNumbers[0] == randomNumbers[2] || randomNumbers[1] == randomNumbers[2]
+                    
+                    // remeber the position of the question in the main queue
+                    positionOftheQuestion = randomNumbers[0]
+                    
+                    // put the 3 sentences into a small queue
+                    for i in 0...2 {
+                        print("i: \(i)","rn:\(randomNumbers[i])", mainQueue.count)
+                        smallQueue[i] = mainQueue[randomNumbers[i]]
+                     
         }
         
+        } while smallQueue[0].eng == "" && (smallQueue[1].eng != "" || smallQueue[2].eng != "")
+    // check here whether the question is empty, if yes go back to the beginig and generate again
         // give back the firts one engish part as question
         return  smallQueue[0].eng
     }
+    
     mutating func fetchAnswers() -> [String] {
         
         var answers = ["","",""]
@@ -124,55 +129,57 @@ struct Logic {
         let rightAnswer = mainQueue[answerIndex].hun
         var scoreFaceImage = #imageLiteral(resourceName: "sad")
         
-       
-        // check right answer and collected anser
-        // if it is right
-            // increase the goodAnswer counter on the right answer in the main queue
-            // if the right anser counter reached 2, remove the sentece from the main queue
-            // increase the good answer indicator in the score
-            // set the face picture to smile
-        // if it is wrong
-            // decrease the goodAnswer counter on the right answer in the main queue
-            // decrease the wrong answer indicator in the score
-            // set the face picture to scream
-        
-        if rightAnswer == collectedAnswer {
-            // good answer branch
-            mainQueue[answerIndex].goodAnswer += 1 // increase goodAnswer number at question in mainQueue
-            if mainQueue[answerIndex].goodAnswer == 2  {
-                mainQueue.remove(at: answerIndex) // remove the question because it is learned
-                maxIndexOfMainQueue -= 1
-            }
-            scoreGoodAnswerIndicator += 1 // update good answer score
-            scoreFaceImage = #imageLiteral(resourceName: "happy")
-        } else {
-            // bad answer branch
-                // mainQueue[answerIndex].goodAnswer -= 1 // decrease goodAnswer number at question in mainQueue
-            scoreBadAnswerIndicator += 1 // update bad answer score
-            scoreFaceImage = #imageLiteral(resourceName: "Scream")
-        }
+        // if right answer is not empty calculate score otherwise give back scoreFace
+        if rightAnswer != "" {
+            // check right answer and collected anser
+                    // if it is right
+                        // increase the goodAnswer counter on the right answer in the main queue
+                        // if the right anser counter reached 2, remove the sentece from the main queue
+                        // increase the good answer indicator in the score
+                        // set the face picture to smile
+                    // if it is wrong
+                        // decrease the goodAnswer counter on the right answer in the main queue
+                        // decrease the wrong answer indicator in the score
+                        // set the face picture to scream
+                    
+                    if rightAnswer == collectedAnswer {
+                        // good answer branch
+                        mainQueue[answerIndex].goodAnswer += 1 // increase goodAnswer number at question in mainQueue
+                        if mainQueue[answerIndex].goodAnswer == 2  {
+                            mainQueue.remove(at: answerIndex) // remove the question because it is learned
+                            maxIndexOfMainQueue -= 1
+                        }
+                        scoreGoodAnswerIndicator += 1 // update good answer score
+                        scoreFaceImage =  #imageLiteral(resourceName: "happy")
+                    } else {
+                        // bad answer branch
+                            // mainQueue[answerIndex].goodAnswer -= 1 // decrease goodAnswer number at question in mainQueue
+                        scoreBadAnswerIndicator += 1 // update bad answer score
+                        scoreFaceImage =  #imageLiteral(resourceName: "Scream")
+                    }
 
-        // check if there are only 2 memebers of the main queue
-        print("counter: \(mainQueue.count)")
-        
-        if mainQueue.count == 2 {
-            if mainQueue[0].hun == "" || mainQueue[1].hun == "" { // there are still question
-                mainQueue.append(.init(eng: "", hun: "", goodAnswer: 1))
-                maxIndexOfMainQueue += 1
-                scoreFaceImage = #imageLiteral(resourceName: "sad")
-            } else {
-                mainQueue.append(.init(eng: "", hun: "", goodAnswer: 1))
-                maxIndexOfMainQueue += 1
-            }
-            print(mainQueue)
+                    // check if there are only 2 memebers of the main queue
+                    print("counter: \(mainQueue.count)")
+                    
+                    if mainQueue.count == 2 {
+                        if mainQueue[0].hun == "" || mainQueue[1].hun == "" { // there are still question
+                            mainQueue.append(.init(eng: "", hun: "", goodAnswer: 1))
+                            maxIndexOfMainQueue += 1
+                        } else {
+                            mainQueue.append(.init(eng: "", hun: "", goodAnswer: 1))
+                            maxIndexOfMainQueue += 1
+                        }
+                        print(mainQueue)
+                    }
+                  
+                        // if one of the two memebers are not empty add and empty member
+                        //else ( all are empty) reset the drill:
+                            // polpulateMAinQueue
+                            // scoreFace vége
+            
+        } else {
+            scoreFaceImage = #imageLiteral(resourceName: "stay-hungry-stay-foolish")
         }
-      
-        
-            // if one of the two memebers are not empty add and empty member
-            //else ( all are empty) reset the drill:
-                // polpulateMAinQueue
-                // scoreFace vége
-        
         
         // give back the score
         let score = Score(goodAnswer: String(scoreGoodAnswerIndicator), badAnswer: String(scoreBadAnswerIndicator), faceImage: scoreFaceImage)

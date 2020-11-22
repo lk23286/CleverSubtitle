@@ -24,16 +24,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // inicislize the  view
-        FaceButtonLabel.setImage(faceImage, for: .normal)
-        GoodAnswerLabel.text = goodNumber
-        BadAnswerLabel.text = badNumber
-        
         reset()
-
-        
-        
     }
     
     @IBAction func AnswerButtonPress(_ sender: UIButton) {
@@ -63,7 +54,7 @@ class ViewController: UIViewController {
 
     
     @IBAction func FaceButton(_ sender: UIButton) {
-        // reset
+        reset()
     }
     
     func giveOneTry() {
@@ -84,7 +75,13 @@ class ViewController: UIViewController {
     }
     
     func reset() {
-        logic.populateMainQueue()
+        // inicislize the  view
+        
+       FaceButtonLabel.setImage(faceImage, for: .normal)
+       GoodAnswerLabel.text = goodNumber
+       BadAnswerLabel.text = badNumber
+        
+        logic.resetAll()
         giveOneTry()
     }
         

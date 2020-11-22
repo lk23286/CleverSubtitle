@@ -19,19 +19,12 @@ struct Logic {
                       ExtendedSentence(eng: "Leslie3", hun: "Laca3", goodAnswer: 2)]
     var scoreGoodAnswerIndicator = 0
     var scoreBadAnswerIndicator = 0
-/*
-    var questionNumber = 0 // the number that is used under the practice
-    var answerNumbers = [0,0,0]
-    var goodAnswerNumberForLabel = 0
-    var badAnswerNumberForLabel = 0
-    var goodAnswerStrForLabel = "0"
-    var badAnswerStrForLabel = "0"
- */
     
    
+
     mutating func populateMainQueue() {
-        maxIndexOfMainQueue = originalQueue.sentences.count - 1
         
+        maxIndexOfMainQueue = originalQueue.sentences.count - 1
 
         
         for i in 0...maxIndexOfMainQueue {
@@ -39,6 +32,19 @@ struct Logic {
             mainQueue.append(.init(eng: originalQueue.sentences[i].eng, hun: originalQueue.sentences[i].hun, goodAnswer: 0))
         }
         mainQueue.remove(at: 0)
+    }
+    
+    mutating func resetAll() {
+        scoreBadAnswerIndicator = 0
+        scoreGoodAnswerIndicator = 0
+        smallQueue.removeAll()
+        smallQueue = [ExtendedSentence(eng: "Leslie1", hun: "Laca1", goodAnswer: 0),
+                          ExtendedSentence(eng: "Leslie2", hun: "Laca2", goodAnswer: 1),
+                        ExtendedSentence(eng: "Leslie3", hun: "Laca3", goodAnswer: 2)]
+        mainQueue.removeAll()
+        mainQueue = [ExtendedSentence(eng: "Leslie", hun: "Laca", goodAnswer: 0)]
+        
+        populateMainQueue()
     }
     
     mutating func fetchQuestion() -> String {
@@ -178,7 +184,7 @@ struct Logic {
                             // scoreFace vége
             
         } else {
-            scoreFaceImage = #imageLiteral(resourceName: "stay-hungry-stay-foolish")
+            scoreFaceImage = #imageLiteral(resourceName: "smile")
         }
         
         // give back the score

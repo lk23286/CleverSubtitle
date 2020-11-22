@@ -17,6 +17,8 @@ struct Logic {
     var smallQueue = [ExtendedSentence(eng: "Leslie1", hun: "Laca1", goodAnswer: 0),
                       ExtendedSentence(eng: "Leslie2", hun: "Laca2", goodAnswer: 1),
                       ExtendedSentence(eng: "Leslie3", hun: "Laca3", goodAnswer: 2)]
+    var scoreGoodAnswerIndicator = 0
+    var scoreBadAnswerIndicator = 0
 /*
     var questionNumber = 0 // the number that is used under the practice
     var answerNumbers = [0,0,0]
@@ -29,6 +31,9 @@ struct Logic {
    
     mutating func populateMainQueue() {
         maxIndexOfMainQueue = originalQueue.sentences.count - 1
+        
+
+        
         for i in 0...maxIndexOfMainQueue {
             
             mainQueue.append(.init(eng: originalQueue.sentences[i].eng, hun: originalQueue.sentences[i].hun, goodAnswer: 0))
@@ -55,7 +60,9 @@ struct Logic {
         
         // put the 3 sentences into a small queue
         for i in 0...2 {
+            print("i: \(i)","rn:\(randomNumbers[i])", mainQueue.count)
             smallQueue[i] = mainQueue[randomNumbers[i]]
+         
         }
         
         // give back the firts one engish part as question
@@ -97,17 +104,11 @@ struct Logic {
         }
         
         
-
- // give back the answers
+        // update the size of the mainQueue
+       // maxIndexOfMainQueue = mainQueue.count
+      //  print(maxIndexOfMainQueue)
         
-  /*      let questionNumber = [3,2,1]
-        let qN = questionNumber.count - 1
-        var answers = ["","",""]
-
-        for i in 0...qN {
-            let index = questionNumber[i]
-            answers[i] = practicingData[index].hun
-   */
+        // give back the answers
         for i in 0...2 {
             answers[i] = smallQueue[i].hun
         }
@@ -119,12 +120,11 @@ struct Logic {
     // ckeck the answer
     mutating func checkAnswer(collectedAnswer: String) -> Score {
         
-        print(collectedAnswer)
+        let answerIndex = positionOftheQuestion
+        let rightAnswer = mainQueue[answerIndex].hun
+        var scoreFaceImage = #imageLiteral(resourceName: "sad")
         
-/*
-        // get right answer from the small queue ( first memeber's english part
-        let rightAnswer = practicingData[questionNumber].hun
- */
+       
         // check right answer and collected anser
         // if it is right
             // increase the goodAnswer counter on the right answer in the main queue
@@ -136,65 +136,49 @@ struct Logic {
             // decrease the wrong answer indicator in the score
             // set the face picture to scream
         
-        // empty the drill queue
+        if rightAnswer == collectedAnswer {
+            // good answer branch
+            mainQueue[answerIndex].goodAnswer += 1 // increase goodAnswer number at question in mainQueue
+            if mainQueue[answerIndex].goodAnswer == 2  {
+                mainQueue.remove(at: answerIndex) // remove the question because it is learned
+                maxIndexOfMainQueue -= 1
+            }
+            scoreGoodAnswerIndicator += 1 // update good answer score
+            scoreFaceImage = #imageLiteral(resourceName: "happy")
+        } else {
+            // bad answer branch
+                // mainQueue[answerIndex].goodAnswer -= 1 // decrease goodAnswer number at question in mainQueue
+            scoreBadAnswerIndicator += 1 // update bad answer score
+            scoreFaceImage = #imageLiteral(resourceName: "Scream")
+        }
+
+        // check if there are only 2 memebers of the main queue
+        print("counter: \(mainQueue.count)")
+        
+        if mainQueue.count == 2 {
+            if mainQueue[0].hun == "" || mainQueue[1].hun == "" { // there are still question
+                mainQueue.append(.init(eng: "", hun: "", goodAnswer: 1))
+                maxIndexOfMainQueue += 1
+                scoreFaceImage = #imageLiteral(resourceName: "sad")
+            } else {
+                mainQueue.append(.init(eng: "", hun: "", goodAnswer: 1))
+                maxIndexOfMainQueue += 1
+            }
+            print(mainQueue)
+        }
+      
+        
+            // if one of the two memebers are not empty add and empty member
+            //else ( all are empty) reset the drill:
+                // polpulateMAinQueue
+                // scoreFace vége
+        
+        
         // give back the score
-/*
-        // get the position of the right answer
-        var goodAnswerNumberOfQuestion = practicingData[questionNumber].goodAnswer
-
-        var faceImageForLabel = #imageLiteral(resourceName: "sad")
-       
-        // check the colected answer with the right answer
-        if collectedAnswer == rightAnswer {
-            //increase the field of goddAnswer of the good sentence
-            goodAnswerNumberOfQuestion += 1
-            // increase the number of the score label of good answer
-            goodAnswerNumberForLabel += 1
-            // transform number to string
-           goodAnswerStrForLabel = String(goodAnswerNumberForLabel)
-            faceImageForLabel = #imageLiteral(resourceName: "happy")
-        }
-        else {
-            //decrease the field of goddAnswer of the good sentence
-            goodAnswerNumberOfQuestion -= 1
-            // decrease the number of the score label of bad answer
-            badAnswerNumberForLabel += 1
-            // transform number to string
-            badAnswerStrForLabel = String(badAnswerNumberForLabel)
-            faceImageForLabel = #imageLiteral(resourceName: "Scream")
-        }
-        
-
+        let score = Score(goodAnswer: String(scoreGoodAnswerIndicator), badAnswer: String(scoreBadAnswerIndicator), faceImage: scoreFaceImage)
     
-        
-*/
-        
-        let score = Score(goodAnswer: "", badAnswer: "", faceImage: #imageLiteral(resourceName: "sad"))
-
         return score
     }
- 
-/*
-    // create random number stack that creates question and answers numbers
-    mutating func createQuestionAnswers() {
-     
-        // identify the size of the drill Stack
-        let max = practicingData.count - 1
-        
-        // create a random number that identify the question
-        questionNumber = Int.random(in: 0...max)
-        
-        for i in 0...max {
-        repeat {
-            answerNumbers[i]
-            
-        } while true
-        }
-
-        
-        
-    }
-*/
 }
 
 

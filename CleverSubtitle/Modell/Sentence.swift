@@ -13,6 +13,6 @@ struct Sentence {
 struct ExtendedSentence {
     let eng: String
     let hun: String
-    let goodAnswer: Int
+    var goodAnswer: Int
 }
 

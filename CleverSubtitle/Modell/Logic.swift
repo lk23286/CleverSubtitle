@@ -61,10 +61,43 @@ struct Logic {
         // give back the firts one engish part as question
         return  smallQueue[0].eng
     }
-    func fetchAnswers() -> [String] {
+    mutating func fetchAnswers() -> [String] {
         
- // get th small queue
- // mix them
+        var answers = ["","",""]
+        
+        // mix them small queue
+        let a = smallQueue[0]
+        let b = smallQueue[1]
+        let c = smallQueue[2]
+        var randomNumber = Int.random(in: 0...2)
+        smallQueue[randomNumber] = a
+        switch randomNumber {
+        case 0: // a is at position 0
+            randomNumber = Int.random(in: 0...1)
+            if randomNumber == 1 {
+                smallQueue[1] = c
+                smallQueue[2] = b
+            }
+        case 1: // a is at position 1
+            randomNumber = Int.random(in: 0...1)
+            if randomNumber == 1 {
+                smallQueue[0] = b
+            } else {
+                smallQueue[0] = c
+                smallQueue[2] = b
+            }
+        default : // a is at position 2
+            randomNumber = Int.random(in: 0...1)
+            if randomNumber == 1 {
+                smallQueue[0] = c
+            } else {
+                smallQueue[0] = b
+                smallQueue[1] = c
+            }
+        }
+        
+        
+
  // give back the answers
         
   /*      let questionNumber = [3,2,1]
@@ -75,7 +108,9 @@ struct Logic {
             let index = questionNumber[i]
             answers[i] = practicingData[index].hun
    */
-            let answers = ["", "", ""]
+        for i in 0...2 {
+            answers[i] = smallQueue[i].hun
+        }
         
         return answers
     }

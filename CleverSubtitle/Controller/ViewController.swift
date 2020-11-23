@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
@@ -21,6 +22,7 @@ class ViewController: UIViewController {
     let goodNumber = "0"
     let badNumber = "0"
     let faceImage = #imageLiteral(resourceName: "sad")
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +85,9 @@ class ViewController: UIViewController {
         
         logic.resetAll()
         giveOneTry()
+       
     }
-        
+   
+
 }
 

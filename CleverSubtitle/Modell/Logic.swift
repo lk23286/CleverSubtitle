@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 struct Logic {
     
@@ -19,6 +20,7 @@ struct Logic {
                       ExtendedSentence(eng: "Leslie3", hun: "Laca3", goodAnswer: 2)]
     var scoreGoodAnswerIndicator = 0
     var scoreBadAnswerIndicator = 0
+    var player = AVAudioPlayer()
     
    
 
@@ -35,6 +37,8 @@ struct Logic {
     }
     
     mutating func resetAll() {
+        playSound("magicWand")
+        
         scoreBadAnswerIndicator = 0
         scoreGoodAnswerIndicator = 0
         smallQueue.removeAll()
@@ -134,6 +138,7 @@ struct Logic {
         let answerIndex = positionOftheQuestion
         let rightAnswer = mainQueue[answerIndex].hun
         var scoreFaceImage = #imageLiteral(resourceName: "sad")
+        var sound = ""
         
         // if right answer is not empty calculate score otherwise give back scoreFace
         if rightAnswer != "" {
@@ -150,32 +155,64 @@ struct Logic {
                     
                     if rightAnswer == collectedAnswer {
                         // good answer branch
+                        
+                        // play sound if there is only 3 sentence
+                        // 0 empty sentece B
+                        // 1 empty sentece C
+                        // 2 empty sentece D
+                        if mainQueue.count == 3 {
+                            var numberOfEmptySentence = 0
+                            for i in 0...2 {
+                                if mainQueue[i].hun == "" {
+                                    numberOfEmptySentence += 1
+                                }
+                            }
+                            switch numberOfEmptySentence {
+                            case 0:
+                                sound = "B"
+                            case 1:
+                                sound = "C"
+                            default:
+                                sound = "D"
+                            }
+                        }
+                        print("sound: \(sound)")
+                        
+                        
                         mainQueue[answerIndex].goodAnswer += 1 // increase goodAnswer number at question in mainQueue
+                        
                         if mainQueue[answerIndex].goodAnswer == 2  {
                             mainQueue.remove(at: answerIndex) // remove the question because it is learned
                             maxIndexOfMainQueue -= 1
                         }
+                        
                         scoreGoodAnswerIndicator += 1 // update good answer score
                         scoreFaceImage =  #imageLiteral(resourceName: "happy")
                     } else {
                         // bad answer branch
+                        sound = "hiccup"
                             // mainQueue[answerIndex].goodAnswer -= 1 // decrease goodAnswer number at question in mainQueue
                         scoreBadAnswerIndicator += 1 // update bad answer score
                         scoreFaceImage =  #imageLiteral(resourceName: "Scream")
                     }
 
                     // check if there are only 2 memebers of the main queue
-                    print("counter: \(mainQueue.count)")
+                   
                     
                     if mainQueue.count == 2 {
-                        if mainQueue[0].hun == "" || mainQueue[1].hun == "" { // there are still question
-                            mainQueue.append(.init(eng: "", hun: "", goodAnswer: 1))
+                        
+                        if mainQueue[0].hun == "" || mainQueue[1].hun == "" {
+                            // there are still one or null question
+        
+                            mainQueue.append(.init(eng: "", hun: "", goodAnswer: 0))
                             maxIndexOfMainQueue += 1
                         } else {
-                            mainQueue.append(.init(eng: "", hun: "", goodAnswer: 1))
+                            // there are still two question
+                            
+                            mainQueue.append(.init(eng: "", hun: "", goodAnswer: 0))
                             maxIndexOfMainQueue += 1
                         }
-                        print(mainQueue)
+                      
                     }
                   
                         // if one of the two memebers are not empty add and empty member
@@ -185,12 +222,21 @@ struct Logic {
             
         } else {
             scoreFaceImage = #imageLiteral(resourceName: "smile")
+           
         }
         
         // give back the score
+        
         let score = Score(goodAnswer: String(scoreGoodAnswerIndicator), badAnswer: String(scoreBadAnswerIndicator), faceImage: scoreFaceImage)
+        playSound(sound)
     
         return score
+    }
+    
+    mutating func playSound (_ sound: String) {
+        let url = Bundle.main.url(forResource: sound , withExtension: "wav")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
     }
 }
 

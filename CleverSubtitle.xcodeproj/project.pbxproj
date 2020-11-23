@@ -18,6 +18,12 @@
 		85331B972556C2850039D385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85331B952556C2850039D385 /* LaunchScreen.storyboard */; };
 		85331BA22556C2860039D385 /* CleverSubtitleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85331BA12556C2860039D385 /* CleverSubtitleTests.swift */; };
 		85331BAD2556C2860039D385 /* CleverSubtitleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85331BAC2556C2860039D385 /* CleverSubtitleUITests.swift */; };
+		855EA20A256C534A001699EE /* A.wav in Resources */ = {isa = PBXBuildFile; fileRef = 855EA209256C534A001699EE /* A.wav */; };
+		855EA20F256C53DA001699EE /* hiccup.wav in Resources */ = {isa = PBXBuildFile; fileRef = 855EA20E256C53DA001699EE /* hiccup.wav */; };
+		855EA214256C541B001699EE /* magicWand.wav in Resources */ = {isa = PBXBuildFile; fileRef = 855EA213256C541B001699EE /* magicWand.wav */; };
+		855EA219256C5A24001699EE /* B.wav in Resources */ = {isa = PBXBuildFile; fileRef = 855EA218256C5A24001699EE /* B.wav */; };
+		855EA21E256C5A2F001699EE /* C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 855EA21D256C5A2F001699EE /* C.wav */; };
+		855EA223256C5CF1001699EE /* D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 855EA222256C5CF1001699EE /* D.wav */; };
 		85A3B4DD2567153800991DD6 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A3B4DC2567153800991DD6 /* Score.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +62,13 @@
 		85331BA82556C2860039D385 /* CleverSubtitleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleverSubtitleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85331BAC2556C2860039D385 /* CleverSubtitleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleverSubtitleUITests.swift; sourceTree = "<group>"; };
 		85331BAE2556C2860039D385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85573797256AEC300083A40A /* CleverSubtitle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CleverSubtitle.entitlements; sourceTree = "<group>"; };
+		855EA209256C534A001699EE /* A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = A.wav; sourceTree = "<group>"; };
+		855EA20E256C53DA001699EE /* hiccup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hiccup.wav; sourceTree = "<group>"; };
+		855EA213256C541B001699EE /* magicWand.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = magicWand.wav; sourceTree = "<group>"; };
+		855EA218256C5A24001699EE /* B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = B.wav; sourceTree = "<group>"; };
+		855EA21D256C5A2F001699EE /* C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = C.wav; sourceTree = "<group>"; };
+		855EA222256C5CF1001699EE /* D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = D.wav; sourceTree = "<group>"; };
 		85A3B4DC2567153800991DD6 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,9 +131,11 @@
 		85331B892556C2800039D385 /* CleverSubtitle */ = {
 			isa = PBXGroup;
 			children = (
+				85573797256AEC300083A40A /* CleverSubtitle.entitlements */,
 				851DB91C25646E3300D141EB /* Modell */,
 				85331BBE2556C2D90039D385 /* View */,
 				85331BBD2556C2CC0039D385 /* Controller */,
+				855EA208256C52AA001699EE /* Souns */,
 				85331B8A2556C2800039D385 /* AppDelegate.swift */,
 				85331B8C2556C2800039D385 /* SceneDelegate.swift */,
 				85331B932556C2850039D385 /* Assets.xcassets */,
@@ -162,6 +177,19 @@
 				85331B902556C2800039D385 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		855EA208256C52AA001699EE /* Souns */ = {
+			isa = PBXGroup;
+			children = (
+				855EA213256C541B001699EE /* magicWand.wav */,
+				855EA20E256C53DA001699EE /* hiccup.wav */,
+				855EA209256C534A001699EE /* A.wav */,
+				855EA218256C5A24001699EE /* B.wav */,
+				855EA21D256C5A2F001699EE /* C.wav */,
+				855EA222256C5CF1001699EE /* D.wav */,
+			);
+			path = Souns;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +295,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				855EA223256C5CF1001699EE /* D.wav in Resources */,
 				85331B972556C2850039D385 /* LaunchScreen.storyboard in Resources */,
 				85331B942556C2850039D385 /* Assets.xcassets in Resources */,
+				855EA20F256C53DA001699EE /* hiccup.wav in Resources */,
+				855EA219256C5A24001699EE /* B.wav in Resources */,
+				855EA21E256C5A2F001699EE /* C.wav in Resources */,
+				855EA20A256C534A001699EE /* A.wav in Resources */,
+				855EA214256C541B001699EE /* magicWand.wav in Resources */,
 				85331B922556C2800039D385 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +510,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CleverSubtitle/CleverSubtitle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LR58F43S2;
 				INFOPLIST_FILE = CleverSubtitle/Info.plist;
@@ -485,6 +520,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = lgl.2.CleverSubtitle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -495,6 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CleverSubtitle/CleverSubtitle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LR58F43S2;
 				INFOPLIST_FILE = CleverSubtitle/Info.plist;
@@ -504,6 +541,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = lgl.2.CleverSubtitle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

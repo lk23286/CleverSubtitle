@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,20 +13,20 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CleverSubtitle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stay-hungry-stay-foolish" translatesAutoresizingMaskIntoConstraints="NO" id="BXx-q0-eNU">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="04i-mj-bR6">
-                                <rect key="frame" x="44" y="0.0" width="852" height="414"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6DG-vc-gtR" userLabel="QuestionView">
-                                        <rect key="frame" x="0.0" y="0.0" width="852" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="169.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLZ-zq-xjm">
-                                                <rect key="frame" x="1" y="1" width="850" height="80"/>
+                                                <rect key="frame" x="1" y="1" width="412" height="167.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -40,10 +40,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vie-i4-T8S" userLabel="Answer1View">
-                                        <rect key="frame" x="0.0" y="83" width="852" height="82"/>
+                                        <rect key="frame" x="0.0" y="170.5" width="414" height="169.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="E8B-DZ-QcS">
-                                                <rect key="frame" x="1" y="1" width="850" height="80"/>
+                                                <rect key="frame" x="1" y="1" width="412" height="167.5"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
                                                 <state key="normal" title="Answer1">
                                                     <color key="titleColor" systemColor="systemYellowColor"/>
@@ -61,10 +61,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3g7-yG-ncw" userLabel="Answer2View">
-                                        <rect key="frame" x="0.0" y="166" width="852" height="82"/>
+                                        <rect key="frame" x="0.0" y="341" width="414" height="170"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="2WB-7b-6pQ">
-                                                <rect key="frame" x="1" y="1" width="850" height="80"/>
+                                                <rect key="frame" x="1" y="1" width="412" height="168"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Answer2">
                                                     <color key="titleColor" systemColor="systemYellowColor"/>
@@ -82,10 +82,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1E-jy-myo" userLabel="Answer3View">
-                                        <rect key="frame" x="0.0" y="249" width="852" height="82"/>
+                                        <rect key="frame" x="0.0" y="512" width="414" height="169.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="urd-wp-YR3" userLabel="Answer3">
-                                                <rect key="frame" x="1" y="1" width="850" height="80"/>
+                                                <rect key="frame" x="1" y="1" width="412" height="167.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Answer2">
                                                     <color key="titleColor" systemColor="systemYellowColor"/>
@@ -103,16 +103,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D10-p8-B9p" userLabel="ResultView">
-                                        <rect key="frame" x="0.0" y="332" width="852" height="82"/>
+                                        <rect key="frame" x="0.0" y="682.5" width="414" height="169.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="8ZE-XX-2nM">
-                                                <rect key="frame" x="289" y="16" width="274" height="50"/>
+                                                <rect key="frame" x="70" y="59.5" width="274" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeE-rc-O2U">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="Kgg-uP-zA4"/>
-                                                            <constraint firstAttribute="width" constant="50" id="otU-xt-UUN"/>
+                                                            <constraint firstAttribute="width" constant="50" id="otU-xt-UUN" userLabel="width = 100"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <color key="textColor" systemColor="systemGreenColor"/>
@@ -132,7 +132,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtm-Hu-oy5">
                                                         <rect key="frame" x="224" y="0.0" width="50" height="50"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="cu5-7v-pY1"/>
+                                                            <constraint firstAttribute="width" constant="50" id="cu5-7v-pY1" userLabel="width = 100"/>
                                                             <constraint firstAttribute="height" constant="50" id="hpV-6r-7U3"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>

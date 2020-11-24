@@ -39,6 +39,8 @@ class ViewController: UIViewController {
         let score = logic.checkAnswer(collectedAnswer: answer!)
         
         FaceButtonLabel.setImage(score.faceImage, for: .normal)
+       
+        
         GoodAnswerLabel.text = score.goodAnswer
         BadAnswerLabel.text = score.badAnswer
         
@@ -57,8 +59,12 @@ class ViewController: UIViewController {
 
     
     @IBAction func FaceButton(_ sender: UIButton) {
-        reset()
-        giveOneTry()
+        let question = logic.fetchQuestion()
+        if question == "" {
+            reset()
+            giveOneTry()
+        }
+
 
     }
     

@@ -216,13 +216,10 @@ struct Logic {
                 
             }
             
-     
-            //else ( all are empty) reset the drill:
-            // polpulateMAinQueue
-            // scoreFace vége
-            
         } else {
-            // give back the "smile" Face, no more question
+            // right answer is empty Branch
+            // no more question End of the Drill
+            // give back the "smile" Face
             scoreFaceImage = #imageLiteral(resourceName: "smile")
             sound = "hiccup"
             

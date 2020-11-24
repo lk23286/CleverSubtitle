@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         reset()
+        giveOneTry()
     }
     
     @IBAction func AnswerButtonPress(_ sender: UIButton) {
@@ -58,6 +59,7 @@ class ViewController: UIViewController {
     @IBAction func FaceButton(_ sender: UIButton) {
         reset()
         giveOneTry()
+
     }
     
     func giveOneTry() {
@@ -65,7 +67,7 @@ class ViewController: UIViewController {
         // giveMeQuestion -> question
         let question = logic.fetchQuestion()
         if question == "" {
-            reset()
+           
         }
         // showQuestion (question)
         questionLabel.text = question

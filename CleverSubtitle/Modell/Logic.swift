@@ -222,7 +222,9 @@ struct Logic {
             // scoreFace vége
             
         } else {
+            // give back the "smile" Face, no more question
             scoreFaceImage = #imageLiteral(resourceName: "smile")
+            sound = "hiccup"
             
         }
         

@@ -22,12 +22,12 @@ struct Logic {
     var scoreBadAnswerIndicator = 0
     var player = AVAudioPlayer()
     
-   
-
+    
+    
     mutating func populateMainQueue() {
         
         maxIndexOfMainQueue = originalQueue.sentences.count - 1
-
+        
         
         for i in 0...maxIndexOfMainQueue {
             
@@ -43,8 +43,8 @@ struct Logic {
         scoreGoodAnswerIndicator = 0
         smallQueue.removeAll()
         smallQueue = [ExtendedSentence(eng: "Leslie1", hun: "Laca1", goodAnswer: 0),
-                          ExtendedSentence(eng: "Leslie2", hun: "Laca2", goodAnswer: 1),
-                        ExtendedSentence(eng: "Leslie3", hun: "Laca3", goodAnswer: 2)]
+                      ExtendedSentence(eng: "Leslie2", hun: "Laca2", goodAnswer: 1),
+                      ExtendedSentence(eng: "Leslie3", hun: "Laca3", goodAnswer: 2)]
         mainQueue.removeAll()
         mainQueue = [ExtendedSentence(eng: "Leslie", hun: "Laca", goodAnswer: 0)]
         
@@ -53,32 +53,34 @@ struct Logic {
     
     mutating func fetchQuestion() -> String {
         
-    // repeate this one until the first one is somethnig
+        // repeate this one until the first one not empty  and second or third is not empty
         repeat {
             //pull randomly 3 sentence - first is the question, other two are answers
-                    var randomNumbers = [0,0,0]
-
-                    randomNumbers[0] = Int.random(in: 0...maxIndexOfMainQueue)
-                    repeat {
-                        randomNumbers[1] = Int.random(in: 0...maxIndexOfMainQueue)
-                        
-                    } while randomNumbers[0] == randomNumbers[1]
-                    repeat {
-                        randomNumbers[2] = Int.random(in: 0...maxIndexOfMainQueue)
-                    } while randomNumbers[0] == randomNumbers[2] || randomNumbers[1] == randomNumbers[2]
-                    
-                    // remeber the position of the question in the main queue
-                    positionOftheQuestion = randomNumbers[0]
-                    
-                    // put the 3 sentences into a small queue
-                    for i in 0...2 {
-                        print("i: \(i)","rn:\(randomNumbers[i])", mainQueue.count)
-                        smallQueue[i] = mainQueue[randomNumbers[i]]
-                     
-        }
-        
+            var randomNumbers = [0,0,0]
+            
+            randomNumbers[0] = Int.random(in: 0...maxIndexOfMainQueue)
+            repeat {
+                randomNumbers[1] = Int.random(in: 0...maxIndexOfMainQueue)
+                
+            } while randomNumbers[0] == randomNumbers[1]
+            repeat {
+                randomNumbers[2] = Int.random(in: 0...maxIndexOfMainQueue)
+            } while randomNumbers[0] == randomNumbers[2] || randomNumbers[1] == randomNumbers[2]
+            
+            // remeber the position of the question in the main queue
+            positionOftheQuestion = randomNumbers[0]
+            
+            // put the 3 sentences into a small queue
+            for i in 0...2 {
+                smallQueue[i] = mainQueue[randomNumbers[i]]
+            }
+        // repeate unit there is no question but there is at least one answer
         } while smallQueue[0].eng == "" && (smallQueue[1].eng != "" || smallQueue[2].eng != "")
-    // check here whether the question is empty, if yes go back to the beginig and generate again
+        
+        // check here whether the question is empty, if yes go back to the beginig and generate again
+//        if smallQueue[0].eng == "" && smallQueue[1].eng == "" && smallQueue[2].eng == ""  {
+//        resetAll()
+//        }
         // give back the firts one engish part as question
         return  smallQueue[0].eng
     }
@@ -120,8 +122,8 @@ struct Logic {
         
         
         // update the size of the mainQueue
-       // maxIndexOfMainQueue = mainQueue.count
-      //  print(maxIndexOfMainQueue)
+        // maxIndexOfMainQueue = mainQueue.count
+        //  print(maxIndexOfMainQueue)
         
         // give back the answers
         for i in 0...2 {
@@ -138,98 +140,97 @@ struct Logic {
         let answerIndex = positionOftheQuestion
         let rightAnswer = mainQueue[answerIndex].hun
         var scoreFaceImage = #imageLiteral(resourceName: "sad")
-        var sound = ""
+        var sound = "A"
         
         // if right answer is not empty calculate score otherwise give back scoreFace
         if rightAnswer != "" {
             // check right answer and collected anser
-                    // if it is right
-                        // increase the goodAnswer counter on the right answer in the main queue
-                        // if the right anser counter reached 2, remove the sentece from the main queue
-                        // increase the good answer indicator in the score
-                        // set the face picture to smile
-                    // if it is wrong
-                        // decrease the goodAnswer counter on the right answer in the main queue
-                        // decrease the wrong answer indicator in the score
-                        // set the face picture to scream
-                    
-                    if rightAnswer == collectedAnswer {
-                        // good answer branch
-                        
-                        // play sound if there is only 3 sentence
-                        // 0 empty sentece B
-                        // 1 empty sentece C
-                        // 2 empty sentece D
-                        if mainQueue.count == 3 {
-                            var numberOfEmptySentence = 0
-                            for i in 0...2 {
-                                if mainQueue[i].hun == "" {
-                                    numberOfEmptySentence += 1
-                                }
-                            }
-                            switch numberOfEmptySentence {
-                            case 0:
-                                sound = "B"
-                            case 1:
-                                sound = "C"
-                            default:
-                                sound = "D"
-                            }
+            // if it is right
+            // increase the goodAnswer counter on the right answer in the main queue
+            // if the right anser counter reached 2, remove the sentece from the main queue
+            // increase the good answer indicator in the score
+            // set the face picture to smile
+            // if it is wrong
+            // decrease the goodAnswer counter on the right answer in the main queue
+            // decrease the wrong answer indicator in the score
+            // set the face picture to scream
+            
+            if rightAnswer == collectedAnswer {
+                // good answer branch
+                
+                // play sound if there is only 3 sentence
+                // 0 empty sentece B
+                // 1 empty sentece C
+                // 2 empty sentece D
+                print(mainQueue.count)
+                if mainQueue.count == 3 {
+                    var numberOfEmptySentence = 0
+                    for i in 0...2 {
+                        if mainQueue[i].hun == "" {
+                            numberOfEmptySentence += 1
                         }
-                        print("sound: \(sound)")
-                        
-                        
-                        mainQueue[answerIndex].goodAnswer += 1 // increase goodAnswer number at question in mainQueue
-                        
-                        if mainQueue[answerIndex].goodAnswer == 2  {
-                            mainQueue.remove(at: answerIndex) // remove the question because it is learned
-                            maxIndexOfMainQueue -= 1
-                        }
-                        
-                        scoreGoodAnswerIndicator += 1 // update good answer score
-                        scoreFaceImage =  #imageLiteral(resourceName: "happy")
-                    } else {
-                        // bad answer branch
-                        sound = "hiccup"
-                            // mainQueue[answerIndex].goodAnswer -= 1 // decrease goodAnswer number at question in mainQueue
-                        scoreBadAnswerIndicator += 1 // update bad answer score
-                        scoreFaceImage =  #imageLiteral(resourceName: "Scream")
                     }
-
-                    // check if there are only 2 memebers of the main queue
-                   
-                    
-                    if mainQueue.count == 2 {
-                        
-                        if mainQueue[0].hun == "" || mainQueue[1].hun == "" {
-                            // there are still one or null question
-        
-                            mainQueue.append(.init(eng: "", hun: "", goodAnswer: 0))
-                            maxIndexOfMainQueue += 1
-                        } else {
-                            // there are still two question
-                            
-                            mainQueue.append(.init(eng: "", hun: "", goodAnswer: 0))
-                            maxIndexOfMainQueue += 1
-                        }
-                      
+                    switch numberOfEmptySentence {
+                    case 0:
+                        sound = "B"
+                    case 1:
+                        sound = "C"
+                    default:
+                        sound = "D"
                     }
-                  
-                        // if one of the two memebers are not empty add and empty member
-                        //else ( all are empty) reset the drill:
-                            // polpulateMAinQueue
-                            // scoreFace vége
+                }
+                print("sound: \(sound)")
+                
+                
+                mainQueue[answerIndex].goodAnswer += 1 // increase goodAnswer number at question in mainQueue
+                
+                if mainQueue[answerIndex].goodAnswer == 2  {
+                    mainQueue.remove(at: answerIndex) // remove the question because it is learned
+                    maxIndexOfMainQueue -= 1
+                }
+                
+                scoreGoodAnswerIndicator += 1 // update good answer score
+                scoreFaceImage =  #imageLiteral(resourceName: "happy")
+            } else {
+                // bad answer branch
+                sound = "hiccup"
+                // mainQueue[answerIndex].goodAnswer -= 1 // decrease goodAnswer number at question in mainQueue
+                scoreBadAnswerIndicator += 1 // update bad answer score
+                scoreFaceImage =  #imageLiteral(resourceName: "Scream")
+            }
+            
+            // check if there are only 2 memebers of the main queue
+            if mainQueue.count == 2 {
+                
+                // there is still one or null question
+                if mainQueue[0].hun == "" || mainQueue[1].hun == "" {
+                    // if one of the two memebers are not empty add an empty member
+                    mainQueue.append(.init(eng: "", hun: "", goodAnswer: 0))
+                    maxIndexOfMainQueue += 1
+                    
+                // there are still two question
+                } else {
+                    mainQueue.append(.init(eng: "", hun: "", goodAnswer: 0))
+                    maxIndexOfMainQueue += 1
+                }
+                
+            }
+            
+     
+            //else ( all are empty) reset the drill:
+            // polpulateMAinQueue
+            // scoreFace vége
             
         } else {
             scoreFaceImage = #imageLiteral(resourceName: "smile")
-           
+            
         }
         
         // give back the score
         
         let score = Score(goodAnswer: String(scoreGoodAnswerIndicator), badAnswer: String(scoreBadAnswerIndicator), faceImage: scoreFaceImage)
         playSound(sound)
-    
+        
         return score
     }
     

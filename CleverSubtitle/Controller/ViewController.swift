@@ -57,13 +57,16 @@ class ViewController: UIViewController {
     
     @IBAction func FaceButton(_ sender: UIButton) {
         reset()
+        giveOneTry()
     }
     
     func giveOneTry() {
         
         // giveMeQuestion -> question
         let question = logic.fetchQuestion()
-        
+        if question == "" {
+            reset()
+        }
         // showQuestion (question)
         questionLabel.text = question
         
@@ -84,7 +87,7 @@ class ViewController: UIViewController {
        BadAnswerLabel.text = badNumber
         
         logic.resetAll()
-        giveOneTry()
+     
        
     }
    

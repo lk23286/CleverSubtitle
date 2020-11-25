@@ -22,12 +22,13 @@ class ViewController: UIViewController {
     let goodNumber = "0"
     let badNumber = "0"
     let faceImage = #imageLiteral(resourceName: "sad")
+    var drillInProgress = true
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         reset()
-        giveOneTry()
+        drillInProgress =  tryNewDrill()
     }
     
     @IBAction func AnswerButtonPress(_ sender: UIButton) {
@@ -39,8 +40,8 @@ class ViewController: UIViewController {
         let score = logic.checkAnswer(collectedAnswer: answer!)
         
         FaceButtonLabel.setImage(score.faceImage, for: .normal)
-       
         
+      
         GoodAnswerLabel.text = score.goodAnswer
         BadAnswerLabel.text = score.badAnswer
         
@@ -52,28 +53,43 @@ class ViewController: UIViewController {
         // showQuestion (question)
         // giveMeAnswers -> answers
         // showAnswers (answers)
-        giveOneTry()
-        
+        //If it is not succefull no more question:
+            // background is alpha 0.5
+            // alpha 0.5 - 1 is blinking until FaceButton is pressed
+        if  tryNewDrill() == false {
+          
+            FaceButtonLabel.setImage(score.faceImage, for: .normal)
+            
+            for _ in 1...10 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    self.FaceButtonLabel.alpha = 0.5
+                           }
+                self.FaceButtonLabel.alpha = 1
+            }
+        }
     }
     
 
     
     @IBAction func FaceButton(_ sender: UIButton) {
+        // FaceButton can be pressed only if the drill is ended ( answer == "")
         let question = logic.fetchQuestion()
         if question == "" {
             reset()
-            giveOneTry()
+            drillInProgress = tryNewDrill()
         }
-
 
     }
     
-    func giveOneTry() {
+    func tryNewDrill() -> Bool {
+        var successful = true
         
         // giveMeQuestion -> question
         let question = logic.fetchQuestion()
+        
+        // question is empty means the drill is ended
         if question == "" {
-           
+            successful = false
         }
         // showQuestion (question)
         questionLabel.text = question
@@ -85,12 +101,15 @@ class ViewController: UIViewController {
         Answer1ButtonLabel.setTitle(answers[0], for: .normal)
         Answer2ButtonLabel.setTitle(answers[1], for: .normal)
         Answer3ButtonLabel.setTitle(answers[2], for: .normal)
+        
+        return successful
     }
     
     func reset() {
         // inicislize the  view
         
        FaceButtonLabel.setImage(faceImage, for: .normal)
+        self.FaceButtonLabel.alpha = 1
        GoodAnswerLabel.text = goodNumber
        BadAnswerLabel.text = badNumber
         

@@ -23,7 +23,8 @@ class ViewController: UIViewController {
     let badNumber = "0"
     let faceImage = #imageLiteral(resourceName: "sad")
     var drillInProgress = true
-
+    var timer = Timer()
+    var alphaOne = true // needs to the update timer
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,50 +36,53 @@ class ViewController: UIViewController {
         
         let answer = sender.currentTitle
         
-        
         // checkAnswer (answer) -> score
         let score = logic.checkAnswer(collectedAnswer: answer!)
         
         FaceButtonLabel.setImage(score.faceImage, for: .normal)
         
-      
         GoodAnswerLabel.text = score.goodAnswer
         BadAnswerLabel.text = score.badAnswer
         
-        
         // viewResult (score)
-        
         
         // giveMeQuestion -> question
         // showQuestion (question)
         // giveMeAnswers -> answers
         // showAnswers (answers)
         //If it is not succefull no more question:
-            // background is alpha 0.5
-            // alpha 0.5 - 1 is blinking until FaceButton is pressed
+        // background is alpha 0.5
+        // alpha 0.5 - 1 is blinking until FaceButton is pressed
         if  tryNewDrill() == false {
-          
-            FaceButtonLabel.setImage(score.faceImage, for: .normal)
             
-            for _ in 1...10 {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    self.FaceButtonLabel.alpha = 0.5
-                           }
-                self.FaceButtonLabel.alpha = 1
-            }
+            FaceButtonLabel.setImage(score.faceImage, for: .normal)
+          
+         // timer makes the face image blinking
+            timer = Timer.scheduledTimer(timeInterval: 0.2, target:self, selector: #selector(updateTimer), userInfo:nil, repeats: true)
+        }
+    }
+        
+    @objc func updateTimer() {
+        if alphaOne {
+            alphaOne = false
+            self.FaceButtonLabel.alpha = 1
+            
+        } else {
+            alphaOne = true
+            self.FaceButtonLabel.alpha = 0.5
+            
         }
     }
     
-
-    
     @IBAction func FaceButton(_ sender: UIButton) {
         // FaceButton can be pressed only if the drill is ended ( answer == "")
+        
         let question = logic.fetchQuestion()
         if question == "" {
             reset()
             drillInProgress = tryNewDrill()
         }
-
+        
     }
     
     func tryNewDrill() -> Bool {
@@ -107,17 +111,18 @@ class ViewController: UIViewController {
     
     func reset() {
         // inicislize the  view
+        timer.invalidate()
         
-       FaceButtonLabel.setImage(faceImage, for: .normal)
+        FaceButtonLabel.setImage(faceImage, for: .normal)
         self.FaceButtonLabel.alpha = 1
-       GoodAnswerLabel.text = goodNumber
-       BadAnswerLabel.text = badNumber
+        GoodAnswerLabel.text = goodNumber
+        BadAnswerLabel.text = badNumber
         
         logic.resetAll()
-     
-       
+        
+        
     }
-   
-
+    
+    
 }
 

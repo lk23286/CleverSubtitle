@@ -18,9 +18,9 @@ struct Data {
                  hun: "Legyen bátorságod követni a szíved és a megérzésed."),
         Sentence(eng: "They somehow know what you truly want to become",
                  hun: "Ezek valahogy tudják mi az amivé igazán válni akarsz."),
-        Sentence(eng: "Good Morning!", hun: "Jó reggelt!"),
-        Sentence(eng: "Stay Hungry Stay Foolish",
-                 hun: "Maradj Éhes Maradj Bolond")
+//        Sentence(eng: "Good Morning!", hun: "Jó reggelt!"),
+//        Sentence(eng: "Stay Hungry Stay Foolish",
+//                 hun: "Maradj Éhes Maradj Bolond")
     ]
     
    

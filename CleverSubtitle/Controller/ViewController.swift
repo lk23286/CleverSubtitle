@@ -54,11 +54,12 @@ class ViewController: UIViewController {
         // background is alpha 0.5
         // alpha 0.5 - 1 is blinking until FaceButton is pressed
         if  tryNewDrill() == false {
+            timer.invalidate()
             
             FaceButtonLabel.setImage(score.faceImage, for: .normal)
           
          // timer makes the face image blinking
-            timer = Timer.scheduledTimer(timeInterval: 0.2, target:self, selector: #selector(updateTimer), userInfo:nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.5, target:self, selector: #selector(updateTimer), userInfo:nil, repeats: true)
         }
     }
         
@@ -72,6 +73,7 @@ class ViewController: UIViewController {
             self.FaceButtonLabel.alpha = 0.5
             
         }
+        
     }
     
     @IBAction func FaceButton(_ sender: UIButton) {
@@ -112,9 +114,9 @@ class ViewController: UIViewController {
     func reset() {
         // inicislize the  view
         timer.invalidate()
+        self.FaceButtonLabel.alpha = 1
         
         FaceButtonLabel.setImage(faceImage, for: .normal)
-        self.FaceButtonLabel.alpha = 1
         GoodAnswerLabel.text = goodNumber
         BadAnswerLabel.text = badNumber
         

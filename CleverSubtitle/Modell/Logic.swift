@@ -179,7 +179,7 @@ struct Logic {
                         sound = "D"
                     }
                 }
-                print("sound: \(sound)")
+               
                 
                 
                 mainQueue[answerIndex].goodAnswer += 1 // increase goodAnswer number at question in mainQueue

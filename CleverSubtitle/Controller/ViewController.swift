@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var GoodAnswerLabel: UILabel!
     @IBOutlet weak var FaceButtonLabel: UIButton!
     @IBOutlet weak var BadAnswerLabel: UILabel!
+    @IBOutlet weak var ProgressBarLabel: UIProgressView!
     
     var logic = Logic()
     let goodNumber = "0"
@@ -25,11 +26,17 @@ class ViewController: UIViewController {
     var drillInProgress = true
     var timer = Timer()
     var alphaOne = true // needs to the update timer
+    var progressBarStatus: Float = 1.00
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         reset()
         drillInProgress =  tryNewDrill()
+        
+        ProgressBarLabel.progress = progressBarStatus
+        
     }
     
     @IBAction func AnswerButtonPress(_ sender: UIButton) {

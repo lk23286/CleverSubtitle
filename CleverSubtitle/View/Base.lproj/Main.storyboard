@@ -172,6 +172,7 @@
                         <outlet property="BadAnswerLabel" destination="rtm-Hu-oy5" id="jb6-9V-PKt"/>
                         <outlet property="FaceButtonLabel" destination="3sC-h0-KA5" id="lEL-ee-AB5"/>
                         <outlet property="GoodAnswerLabel" destination="xeE-rc-O2U" id="2m4-UL-tEN"/>
+                        <outlet property="ProgressBarLabel" destination="MLt-Ti-HzA" id="7KQ-OO-orJ"/>
                         <outlet property="questionLabel" destination="tLZ-zq-xjm" id="ueK-pQ-t5x"/>
                     </connections>
                 </viewController>

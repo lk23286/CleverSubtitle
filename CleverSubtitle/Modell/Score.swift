@@ -12,4 +12,5 @@ struct Score {
     let goodAnswer: String
     let badAnswer: String
     let faceImage: UIImage
+    let progressNumber: Float
 }

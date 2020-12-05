@@ -25,6 +25,7 @@
 		855EA21E256C5A2F001699EE /* C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 855EA21D256C5A2F001699EE /* C.wav */; };
 		855EA223256C5CF1001699EE /* D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 855EA222256C5CF1001699EE /* D.wav */; };
 		85A3B4DD2567153800991DD6 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A3B4DC2567153800991DD6 /* Score.swift */; };
+		85BB0264257C261900CE2111 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BB0263257C261900CE2111 /* ProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		855EA21D256C5A2F001699EE /* C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = C.wav; sourceTree = "<group>"; };
 		855EA222256C5CF1001699EE /* D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = D.wav; sourceTree = "<group>"; };
 		85A3B4DC2567153800991DD6 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		85BB0263257C261900CE2111 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				851DB925256474DF00D141EB /* Sentence.swift */,
 				851DB92A256475CD00D141EB /* Logic.swift */,
 				85A3B4DC2567153800991DD6 /* Score.swift */,
+				85BB0263257C261900CE2111 /* ProgressBar.swift */,
 			);
 			path = Modell;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				851DB926256474DF00D141EB /* Sentence.swift in Sources */,
 				85331B8D2556C2800039D385 /* SceneDelegate.swift in Sources */,
 				851DB92B256475CD00D141EB /* Logic.swift in Sources */,
+				85BB0264257C261900CE2111 /* ProgressBar.swift in Sources */,
 				851DB91E2564732F00D141EB /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

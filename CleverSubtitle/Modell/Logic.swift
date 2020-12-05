@@ -21,12 +21,19 @@ struct Logic {
     var scoreGoodAnswerIndicator = 0
     var scoreBadAnswerIndicator = 0
     var player = AVAudioPlayer()
+    var progressNumber: Float = 1.0
+    var ProgressAllSentence = 0
+    var ProgressActualSentence = 0
+    var progressBar = ProgressBar(progress: 0.0, allSentence: 0.0, actualSentece: 0.0)
     
     
     
     mutating func populateMainQueue() {
         
         maxIndexOfMainQueue = originalQueue.sentences.count - 1
+        progressBar.allSentence = Float.init(originalQueue.sentences.count)
+        
+        
         
         
         for i in 0...maxIndexOfMainQueue {
@@ -123,8 +130,7 @@ struct Logic {
         
         // update the size of the mainQueue
         // maxIndexOfMainQueue = mainQueue.count
-        //  print(maxIndexOfMainQueue)
-        
+      
         // give back the answers
         for i in 0...2 {
             answers[i] = smallQueue[i].hun
@@ -141,6 +147,8 @@ struct Logic {
         let rightAnswer = mainQueue[answerIndex].hun
         var scoreFaceImage = #imageLiteral(resourceName: "sad")
         var sound = "A"
+        
+        
         
         // if right answer is not empty calculate score otherwise give back scoreFace
         if rightAnswer != "" {
@@ -163,6 +171,8 @@ struct Logic {
                 // 1 empty sentece C
                 // 2 empty sentece D
                 print(mainQueue.count)
+               
+               
                 if mainQueue.count == 3 {
                     var numberOfEmptySentence = 0
                     for i in 0...2 {
@@ -173,10 +183,13 @@ struct Logic {
                     switch numberOfEmptySentence {
                     case 0:
                         sound = "B"
+                       
                     case 1:
                         sound = "C"
+                       
                     default:
                         sound = "D"
+                       
                     }
                 }
                
@@ -208,10 +221,13 @@ struct Logic {
                     mainQueue.append(.init(eng: "", hun: "", goodAnswer: 0))
                     maxIndexOfMainQueue += 1
                     
+                    
                 // there are still two question
                 } else {
                     mainQueue.append(.init(eng: "", hun: "", goodAnswer: 0))
                     maxIndexOfMainQueue += 1
+                    
+                    
                 }
                 
             }
@@ -222,21 +238,41 @@ struct Logic {
             // give back the "smile" Face
             scoreFaceImage = #imageLiteral(resourceName: "smile")
             sound = "hiccup"
+           
             
             
         }
+        // calculate the progress of the progressBar
+        progressBar.actualSentece = progressBar.allSentence - Float.init(scoreGoodAnswerIndicator) / 2
         
+        progressBar.progress = Float.init ( progressBar.actualSentece  / progressBar.allSentence )
+        print(progressBar.progress, progressBar.allSentence, progressBar.actualSentece)
+       
         // give back the score
-        
-        let score = Score(goodAnswer: String(scoreGoodAnswerIndicator), badAnswer: String(scoreBadAnswerIndicator), faceImage: scoreFaceImage)
+        let score = Score(goodAnswer: String(scoreGoodAnswerIndicator), badAnswer: String(scoreBadAnswerIndicator), faceImage: scoreFaceImage, progressNumber: progressBar.progress)
         playSound(sound)
+        
         
         return score
     }
     
     mutating func playSound (_ sound: String) {
         let url = Bundle.main.url(forResource: sound , withExtension: "wav")
-        player = try! AVAudioPlayer(contentsOf: url!)
+        
+        
+        do{
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            try AVAudioSession.sharedInstance().setActive(true)
+             player = try! AVAudioPlayer(contentsOf: url!)
+            //try audioPlayer = try AVAudioPlayer(contentsOf: soundURL!)
+
+        }
+
+        catch{
+
+            print(error)
+        }
+        
         player.play()
     }
 }

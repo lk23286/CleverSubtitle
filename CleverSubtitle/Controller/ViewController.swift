@@ -34,9 +34,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         reset()
         drillInProgress =  tryNewDrill()
-        
-        ProgressBarLabel.progress = progressBarStatus
-        
     }
     
     @IBAction func AnswerButtonPress(_ sender: UIButton) {
@@ -50,6 +47,8 @@ class ViewController: UIViewController {
         
         GoodAnswerLabel.text = score.goodAnswer
         BadAnswerLabel.text = score.badAnswer
+        ProgressBarLabel.progress = score.progressNumber
+// update progressBarStatus
         
         // viewResult (score)
         
@@ -126,6 +125,7 @@ class ViewController: UIViewController {
         FaceButtonLabel.setImage(faceImage, for: .normal)
         GoodAnswerLabel.text = goodNumber
         BadAnswerLabel.text = badNumber
+        ProgressBarLabel.progress = progressBarStatus
         
         logic.resetAll()
         

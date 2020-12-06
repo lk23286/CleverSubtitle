@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import AVFoundation
+
 
 struct Logic {
     
@@ -20,7 +20,7 @@ struct Logic {
                       ExtendedSentence(eng: "Leslie3", hun: "Laca3", goodAnswer: 2)]
     var scoreGoodAnswerIndicator = 0
     var scoreBadAnswerIndicator = 0
-    var player = AVAudioPlayer()
+   
     var progressNumber: Float = 1.0
     var ProgressAllSentence = 0
     var ProgressActualSentence = 0
@@ -44,7 +44,8 @@ struct Logic {
     }
     
     mutating func resetAll() {
-        playSound("magicWand")
+        
+        
         
         scoreBadAnswerIndicator = 0
         scoreGoodAnswerIndicator = 0
@@ -81,13 +82,13 @@ struct Logic {
             for i in 0...2 {
                 smallQueue[i] = mainQueue[randomNumbers[i]]
             }
-        // repeate unit there is no question but there is at least one answer
+            // repeate unit there is no question but there is at least one answer
         } while smallQueue[0].eng == "" && (smallQueue[1].eng != "" || smallQueue[2].eng != "")
         
         // check here whether the question is empty, if yes go back to the beginig and generate again
-//        if smallQueue[0].eng == "" && smallQueue[1].eng == "" && smallQueue[2].eng == ""  {
-//        resetAll()
-//        }
+        //        if smallQueue[0].eng == "" && smallQueue[1].eng == "" && smallQueue[2].eng == ""  {
+        //        resetAll()
+        //        }
         // give back the firts one engish part as question
         return  smallQueue[0].eng
     }
@@ -130,7 +131,7 @@ struct Logic {
         
         // update the size of the mainQueue
         // maxIndexOfMainQueue = mainQueue.count
-      
+        
         // give back the answers
         for i in 0...2 {
             answers[i] = smallQueue[i].hun
@@ -170,9 +171,9 @@ struct Logic {
                 // 0 empty sentece B
                 // 1 empty sentece C
                 // 2 empty sentece D
-                print(mainQueue.count)
                
-               
+                
+                
                 if mainQueue.count == 3 {
                     var numberOfEmptySentence = 0
                     for i in 0...2 {
@@ -183,16 +184,16 @@ struct Logic {
                     switch numberOfEmptySentence {
                     case 0:
                         sound = "B"
-                       
+                        
                     case 1:
                         sound = "C"
-                       
+                        
                     default:
                         sound = "D"
-                       
+                        
                     }
                 }
-               
+                
                 
                 
                 mainQueue[answerIndex].goodAnswer += 1 // increase goodAnswer number at question in mainQueue
@@ -220,13 +221,17 @@ struct Logic {
                     // if one of the two memebers are not empty add an empty member
                     mainQueue.append(.init(eng: "", hun: "", goodAnswer: 0))
                     maxIndexOfMainQueue += 1
+                    sound = "C"
+                    if mainQueue[0].hun == "" && mainQueue[1].hun == "" {
+                        sound = "D"
+                    }
                     
                     
-                // there are still two question
+                    // there are still two question
                 } else {
                     mainQueue.append(.init(eng: "", hun: "", goodAnswer: 0))
                     maxIndexOfMainQueue += 1
-                    
+                    sound = "B"
                     
                 }
                 
@@ -238,7 +243,7 @@ struct Logic {
             // give back the "smile" Face
             scoreFaceImage = #imageLiteral(resourceName: "smile")
             sound = "hiccup"
-           
+            
             
             
         }
@@ -246,35 +251,17 @@ struct Logic {
         progressBar.actualSentece = progressBar.allSentence - Float.init(scoreGoodAnswerIndicator) / 2
         
         progressBar.progress = Float.init ( progressBar.actualSentece  / progressBar.allSentence )
-        print(progressBar.progress, progressBar.allSentence, progressBar.actualSentece)
        
+        
         // give back the score
-        let score = Score(goodAnswer: String(scoreGoodAnswerIndicator), badAnswer: String(scoreBadAnswerIndicator), faceImage: scoreFaceImage, progressNumber: progressBar.progress)
-        playSound(sound)
+        let score = Score(goodAnswer: String(scoreGoodAnswerIndicator), badAnswer: String(scoreBadAnswerIndicator), faceImage: scoreFaceImage, progressNumber: progressBar.progress, sound: sound)
+        
         
         
         return score
     }
     
-    mutating func playSound (_ sound: String) {
-        let url = Bundle.main.url(forResource: sound , withExtension: "wav")
-        
-        
-        do{
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-            try AVAudioSession.sharedInstance().setActive(true)
-             player = try! AVAudioPlayer(contentsOf: url!)
-            //try audioPlayer = try AVAudioPlayer(contentsOf: soundURL!)
 
-        }
-
-        catch{
-
-            print(error)
-        }
-        
-        player.play()
-    }
 }
 
 

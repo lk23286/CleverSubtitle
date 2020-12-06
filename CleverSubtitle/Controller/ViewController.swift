@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 
 class ViewController: UIViewController {
@@ -27,6 +28,7 @@ class ViewController: UIViewController {
     var timer = Timer()
     var alphaOne = true // needs to the update timer
     var progressBarStatus: Float = 1.00
+    var player = AVAudioPlayer()
     
 
     
@@ -48,7 +50,8 @@ class ViewController: UIViewController {
         GoodAnswerLabel.text = score.goodAnswer
         BadAnswerLabel.text = score.badAnswer
         ProgressBarLabel.progress = score.progressNumber
-// update progressBarStatus
+        playSound(score.sound)
+        
         
         // viewResult (score)
         
@@ -126,10 +129,30 @@ class ViewController: UIViewController {
         GoodAnswerLabel.text = goodNumber
         BadAnswerLabel.text = badNumber
         ProgressBarLabel.progress = progressBarStatus
+        playSound("magicWand")
         
         logic.resetAll()
         
         
+    }
+    
+     func playSound (_ sound: String) {
+        let url = Bundle.main.url(forResource: sound , withExtension: "wav")
+        
+        
+        do{
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            player = try! AVAudioPlayer(contentsOf: url!)
+            
+        }
+        
+        catch{
+            
+            print(error)
+        }
+        
+        player.play()
     }
     
     

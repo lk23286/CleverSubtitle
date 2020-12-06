@@ -13,4 +13,5 @@ struct Score {
     let badAnswer: String
     let faceImage: UIImage
     let progressNumber: Float
+    let sound: String
 }

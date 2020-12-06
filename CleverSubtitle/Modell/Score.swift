@@ -15,3 +15,4 @@ struct Score {
     let progressNumber: Float
     let sound: String
 }
+
